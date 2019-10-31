@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin">
+
+    <View
+        android:id="@+id/pantry_content_progress_dot"
+        android:layout_width="@dimen/list_progress_dot_width"
+        android:layout_height="@dimen/list_progress_dot_width"
+        android:background="@drawable/dot"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/pantry_content_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/pantry_content_quantity"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textColor="@color/body"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/pantry_content_progress_dot"
+        app:layout_constraintEnd_toEndOf="@id/pantry_content_progress_dot"
+        app:layout_constraintStart_toStartOf="@id/pantry_content_progress_dot"
+        app:layout_constraintTop_toTopOf="@id/pantry_content_progress_dot" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/pantry_content_background"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/pantry_content_progress_dot"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.twisthenry8gmail.fullcart.ContentTextSwitcher
+            android:id="@+id/pantry_content_main"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin"
+            app:layout_constraintBottom_toTopOf="@id/pantry_content_extra"
+            app:layout_constraintEnd_toStartOf="@id/pantry_content_increment"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:textViewLayout="@layout/content_main_view" />
+
+        <com.twisthenry8gmail.fullcart.ContentTextSwitcher
+            android:id="@+id/pantry_content_extra"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/pantry_content_increment"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pantry_content_main"
+            app:textViewLayout="@layout/content_extra_view" />
+
+        <ImageButton
+            android:id="@+id/pantry_content_increment"
+            android:layout_width="@dimen/list_action_size"
+            android:layout_height="@dimen/list_action_size"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/pantry_increment_cd"
+            android:padding="@dimen/list_action_padding"
+            android:scaleType="fitCenter"
+            android:src="@drawable/outline_add_circle_outline_24"
+            android:tint="@color/body_secondary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/pantry_content_decrement" />
+
+        <ImageButton
+            android:id="@+id/pantry_content_decrement"
+            android:layout_width="@dimen/list_action_size"
+            android:layout_height="@dimen/list_action_size"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/pantry_decrement_cd"
+            android:padding="@dimen/list_action_padding"
+            android:scaleType="fitCenter"
+            android:src="@drawable/outline_remove_circle_outline_24"
+            android:tint="@color/body_secondary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <integer name="transfer_pantry_exit_delay">10000</integer>
+
+    <dimen name="shopping_list_button_animation_translation">32dp</dimen>
+    <integer name="shopping_list_tick_animation_tension">4</integer>
+
+</resources>

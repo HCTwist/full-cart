@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tutorial_page_title"
+        style="@style/TutorialTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/large_margin"
+        android:textColor="@color/body"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/tutorial_page_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <LinearLayout
+        android:id="@+id/tutorial_page_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tutorial_page_title">
+
+        <ImageView
+            android:layout_width="@dimen/list_action_size"
+            android:layout_height="@dimen/list_action_size"
+            android:layout_marginEnd="@dimen/half_margin"
+            android:contentDescription="@string/tutorial_cd_shopping"
+            android:src="@drawable/outline_shopping_cart_24"
+            android:tint="@color/body_secondary" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="@dimen/half_margin"
+            android:contentDescription="@string/tutorial_cd_plus"
+            android:src="@drawable/outline_add_24"
+            android:tint="@color/body_secondary" />
+
+        <ImageView
+            android:layout_width="@dimen/list_action_size"
+            android:layout_height="@dimen/list_action_size"
+            android:contentDescription="@string/tutorial_cd_pantry"
+            android:src="@drawable/outline_kitchen_24"
+            android:tint="@color/body_secondary" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/tutorial_page_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/xxl_margin"
+        android:src="@drawable/outline_chevron_left_24"
+        android:tint="@color/body_secondary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tutorial_page_arrow_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0"
+        android:text="@string/tutorial_0_prompt"
+        android:textColor="@color/body_secondary"
+        app:layout_constraintBottom_toBottomOf="@id/tutorial_page_arrow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tutorial_page_arrow" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

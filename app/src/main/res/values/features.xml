@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="feature_dark_mode">Dark mode</string>
+    <string name="feature_custom_category_colors">Custom category colors</string>
+    <string name="feature_default_category">Edit the default category</string>
+
+</resources>

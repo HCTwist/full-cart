@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="primary">#00a6f0</color>
+    <color name="accent">#00a6f0</color>
+    <color name="body">#344851</color>
+    <color name="body_secondary">#acbfc6</color>
+    <color name="background">#FAFAFA</color>
+    <color name="error_color">#FFDD2C00</color>
+
+    <color name="navigation_header">#dcfbff</color>
+    <color name="default_category">#CFDEE6</color>
+
+    <color name="custom_color_dot_default">#CCCCCC</color>
+
+    <!-- Shopping -->
+    <color name="basket_header">#344851</color>
+
+    <!-- Pantry -->
+    <color name="to_use">#AF2933</color>
+
+    <array name="category_colors">
+
+        <item>#00ea67</item>
+        <item>#006c2b</item>
+        <item>#00d5f7</item>
+        <item>#0078ff</item>
+        <item>#7e42c8</item>
+        <item>#ff99e8</item>
+        <item>#fe3699</item>
+        <item>#ff000e</item>
+        <item>#ff7b40</item>
+        <item>#ffdb2b</item>
+        <item>#b86600</item>
+        <item>#522019</item>
+        <item>#969fa6</item>
+        <item>#231f1e</item>
+    </array>
+</resources>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/color_picker_padding">
+
+    <View
+        android:id="@+id/dot"
+        android:layout_width="@dimen/color_picker_dot_width"
+        android:layout_height="@dimen/color_picker_dot_width"
+        android:background="@drawable/color_picker_dot"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/g"
+        app:layout_constraintBottom_toBottomOf="@id/g"/>
+
+    <SeekBar
+        android:id="@+id/r"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/color_picker_seek_margin_rb"
+        android:max="255"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/dot"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/g"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/color_picker_seek_margin_g"
+        android:max="255"
+        app:layout_constraintBottom_toTopOf="@id/b"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/dot"
+        app:layout_constraintTop_toBottomOf="@id/r" />
+
+    <SeekBar
+        android:id="@+id/b"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/color_picker_seek_margin_rb"
+        android:max="255"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/dot" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

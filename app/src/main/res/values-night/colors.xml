@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="body">#cfdadf</color>
+    <color name="body_secondary">#4e5659</color>
+
+    <color name="navigation_header">#171e1f</color>
+
+</resources>

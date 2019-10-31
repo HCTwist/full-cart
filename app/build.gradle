@@ -1,0 +1,35 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.twisthenry8gmail.fullcart"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 9
+        versionName "1.0.2"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.google.android.material:material:1.1.0-beta01'
+    implementation 'androidx.preference:preference:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.android.billingclient:billing:2.0.3'
+    implementation project(':roundedbottomsheet')
+    implementation project(':simplifiedpreferences')
+    implementation project(':colorpicker')
+}

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/setting_category_notifications">
+
+        <Preference
+            app:key="notifications"
+            app:title="@string/setting_notifications" />
+
+        <com.twisthenry8gmail.fullcart.TimePickerPreference
+            app:defaultValue="09:00"
+            app:key="use_by_notify_time"
+            app:title="@string/setting_use_by_notify_time" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/setting_category_general">
+
+        <SwitchPreference
+            app:defaultValue="false"
+            app:key="show_pantry"
+            app:title="@string/setting_show_pantry" />
+
+        <SwitchPreference
+            app:defaultValue="false"
+            app:key="lock_rotation"
+            app:title="@string/setting_lock_rotation" />
+
+        <ListPreference
+            app:defaultValue="0"
+            app:entries="@array/dark_modes_entries"
+            app:entryValues="@array/dark_modes_entryValues"
+            app:key="dark_mode"
+            app:title="@string/setting_dark_mode"
+            app:useSimpleSummaryProvider="true" />
+
+        <Preference
+            app:key="show_tutorial"
+            app:title="@string/setting_show_tutorial" />
+
+    </PreferenceCategory>
+
+    <!--</androidx.preference.PreferenceCategory>-->
+
+    <PreferenceCategory android:title="@string/setting_category_shopping">
+
+        <ListPreference
+            app:defaultValue="0"
+            app:entries="@array/auto_delete_checked_entries"
+            app:entryValues="@array/auto_delete_checked_entryValues"
+            app:key="auto_delete_checked"
+            app:title="@string/setting_auto_delete_checked"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/setting_category_pantry">
+
+        <SwitchPreference
+            app:defaultValue="false"
+            app:key="best_before_default"
+            app:title="@string/setting_by_date_default" />
+
+        <SwitchPreference
+            app:defaultValue="true"
+            app:key="ask_use_by"
+            app:title="@string/setting_ask_use_by" />
+
+        <ListPreference
+            app:defaultValue="2"
+            app:entries="@array/use_by_entries"
+            app:entryValues="@array/use_by_entryValues"
+            app:key="mark_use_by"
+            app:title="@string/setting_mark_use_by"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            app:defaultValue="1"
+            app:entries="@array/pantry_date_format"
+            app:entryValues="@array/pantry_date_formatValues"
+            app:key="pantry_date_formatting"
+            app:title="@string/setting_pantry_date_format"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/setting_category_search">
+
+        <SwitchPreference
+            app:defaultValue="true"
+            app:key="show_category_letters"
+            app:title="@string/setting_show_category_letters" />
+
+        <Preference
+            app:key="clear_search_db"
+            app:title="@string/setting_search_db" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/setting_category_feedback">
+
+        <Preference
+            app:key="email"
+            app:summary="@string/setting_category_email_summary"
+            app:title="@string/setting_category_email" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/setting_category_premium">
+
+        <com.twisthenry8gmail.fullcart.PremiumPreference />
+
+    </PreferenceCategory>
+
+</androidx.preference.PreferenceScreen>

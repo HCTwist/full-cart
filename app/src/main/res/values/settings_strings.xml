@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="setting_category_notifications">Notifications</string>
+    <string name="setting_notifications">Notification settings</string>
+    <string name="setting_use_by_notify_time">Daily notification time</string>
+
+    <string name="setting_category_general">General</string>
+    <string name="setting_lock_rotation">Lock the screen to portrait</string>
+    <string name="setting_show_pantry">Show the Pantry by default</string>
+    <string name="setting_dark_mode">Dark mode</string>
+    <string name="setting_show_tutorial">Show tutorial</string>
+
+    <string name="setting_category_shopping">Shopping list</string>
+    <string name="setting_auto_delete_checked">Automatically delete checked items</string>
+
+    <string name="setting_category_pantry">Pantry</string>
+    <string name="setting_by_date_default">Use best before date by default</string>
+    <string name="setting_ask_use_by">Always ask for a use by/best before date when transferring</string>
+    <string name="setting_mark_use_by">Notify me when items need to be used</string>
+    <string name="setting_pantry_date_format">Use by date formatting</string>
+
+    <string name="setting_category_search">Search</string>
+    <string name="setting_show_category_letters">Show letters as well as colors for each category</string>
+    <string name="setting_search_db">Clear search database</string>
+    <string name="setting_search_db_prompt">Cleared search database</string>
+
+    <string name="setting_category_feedback">Feedback</string>
+    <string name="setting_category_email">Email me</string>
+    <string name="setting_category_email_summary">Anything you want to say, feature requests, bugs, feel free to let me know</string>
+    <string name="email_intent_title">Send email…</string>
+
+    <!-- Premium -->
+    <string name="setting_category_premium">FullCart Premium</string>
+    <string name="setting_premium_title">You have premium</string>
+    <string name="setting_premium_summary">Thank you for supporting us</string>
+    <string name="setting_no_premium_title">Premium</string>
+    <string name="setting_no_premium_summary">Find out more</string>
+    <!-- Dialog -->
+    <string name="premium_button_title">Premium</string>
+    <string name="premium_billing_error">Billing info cannot be loaded, please check your connection and retry</string>
+    <string name="premium_billing_loading">Loading info</string>
+    <string name="no_premium_content">Purchase premium to unlock more features.</string>
+    <string name="no_premium_positive">Purchase</string>
+    <string name="premium_content">Thank you so much for supporting us, you now have access to all features.\n\nIf you have a feature in mind that you would like to see, please let me know and I will get back to you as soon as I can!</string>
+    <string name="premium_positive">Feedback</string>
+    <string name="premium_feedback_subject">Feature request</string>
+
+    <string name="dark_mode_def">On with battery saver</string>
+    <string-array name="dark_modes_entries">
+        <item>Always off</item>
+        <item>Always on</item>
+        <item>@string/dark_mode_def</item>
+    </string-array>
+
+    <string-array name="dark_modes_entryValues">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="auto_delete_checked_entries">
+        <item>Never</item>
+        <item>After 1 day</item>
+        <item>After 2 days</item>
+        <item>After 3 days</item>
+        <item>After 4 days</item>
+        <item>After 5 days</item>
+        <item>After 6 days</item>
+        <item>After 7 days</item>
+    </string-array>
+
+    <string-array name="auto_delete_checked_entryValues">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+    </string-array>
+
+    <!-- TODO Add "In 1 day" option -->
+    <string-array name="pantry_date_format">
+        <item>Use by: 01 June</item>
+        <item>UB: 01/06/2016</item>
+    </string-array>
+
+    <string-array name="pantry_date_formatValues">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
+    <string-array name="use_by_date_displays">
+        <item>Use by:\u0020</item>
+        <item>UB:\u0020</item>
+    </string-array>
+
+    <string-array name="best_before_date_displays">
+        <item>Best before:\u0020</item>
+        <item>BB:\u0020</item>
+    </string-array>
+
+    <string-array name="by_date_titles">
+        <item>Use by date</item>
+        <item>Best before date</item>
+    </string-array>
+
+    <string-array name="use_by_entries">
+        <item>2 days before</item>
+        <item>3 days before</item>
+        <item>4 days before</item>
+        <item>5 days before</item>
+        <item>7 days before</item>
+    </string-array>
+
+    <string-array name="use_by_entryValues">
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>7</item>
+    </string-array>
+
+</resources>

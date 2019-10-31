@@ -1,0 +1,98 @@
+<resources>
+
+    <style name="AppTheme" parent="MainTheme">
+        <item name="android:statusBarColor">@color/primary</item>
+    </style>
+
+    <style name="MainTheme" parent="BaseTheme">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="colorSecondary">@color/body</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheet</item>
+    </style>
+
+    <style name="BaseTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar" />
+
+    <style name="Input">
+        <item name="android:inputType">textAutoCorrect|textCapSentences</item>
+    </style>
+
+    <style name="TutorialTitle">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:fontFamily">@font/librefranklin_regular</item>
+    </style>
+
+    <style name="TutorialText">
+        <item name="android:textSize">@dimen/medium_font</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:paddingStart">@dimen/xl_margin</item>
+        <item name="android:paddingEnd">@dimen/xl_margin</item>
+    </style>
+
+    <style name="NoAutoFill" />
+
+    <style name="ToolbarTitle">
+        <item name="android:fontFamily">@font/librefranklin_regular</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/body</item>
+    </style>
+
+    <style name="NoMinorMinWidthDialog" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
+        <item name="android:windowMinWidthMinor">0%</item>
+    </style>
+
+    <style name="AppBottomSheet" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppBottomSheetStyle</item>
+    </style>
+
+    <style name="AppBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="CategoryBottomSheet" parent="AppBottomSheet">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="PickerControlContainer">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_marginStart">@dimen/double_margin</item>
+        <item name="android:layout_marginEnd">@dimen/double_margin</item>
+        <item name="android:layout_marginTop">@dimen/margin</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="PickerControlLabel">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">@dimen/big_font</item>
+    </style>
+
+    <style name="PickerControlBar">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginStart">@dimen/margin</item>
+        <item name="android:layout_marginEnd">@dimen/margin</item>
+    </style>
+
+    <style name="PickerControlInput.Container" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="PickerControlInput" parent="Widget.MaterialComponents.TextInputEditText.OutlinedBox">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:inputType">number</item>
+        <item name="android:minWidth">@dimen/picker_color_input_min_width</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+</resources>
