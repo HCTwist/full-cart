@@ -12,7 +12,7 @@
         android:layout_marginStart="@dimen/margin"
         android:layout_marginTop="@dimen/margin"
         android:layout_marginBottom="@dimen/margin"
-        android:background="@drawable/color_picker_dot"
+        android:background="@drawable/dot"
         android:gravity="center"
         android:textSize="@dimen/small_font"
         app:layout_constraintBottom_toBottomOf="parent"

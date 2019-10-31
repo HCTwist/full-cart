@@ -4,9 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FullCartClone.iml" filepath="$PROJECT_DIR$/FullCartClone.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/colorpicker/colorpicker.iml" filepath="$PROJECT_DIR$/colorpicker/colorpicker.iml" />
       <module fileurl="file://$PROJECT_DIR$/roundedbottomsheet/roundedbottomsheet.iml" filepath="$PROJECT_DIR$/roundedbottomsheet/roundedbottomsheet.iml" />
-      <module fileurl="file://$PROJECT_DIR$/simplifiedpreferences/simplifiedpreferences.iml" filepath="$PROJECT_DIR$/simplifiedpreferences/simplifiedpreferences.iml" />
     </modules>
   </component>
 </project>

@@ -23,7 +23,7 @@ import java.util.Locale;
 
 public class TimePickerPreference extends SimplifiedDialogPreference {
 
-    public static final String DEFAULT_USE_BY_NOTIFICATION_TIME = "09:00";
+    static final String DEFAULT_USE_BY_NOTIFICATION_TIME = "09:00";
 
     public TimePickerPreference(Context context, AttributeSet attrs) {
 
@@ -101,7 +101,7 @@ public class TimePickerPreference extends SimplifiedDialogPreference {
                 timePicker.setMinute(startingMinute);
             }
 
-            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getContext(), com.twisthenry8gmail.simplifiedpreferences.R.style.NoMinorMinWidthDialog);
+            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getContext(), R.style.NoMinorMinWidthDialog);
             builder.setPositiveButton(android.R.string.ok, (dialogInterface, i) -> {
 
                 int hour, minute;
