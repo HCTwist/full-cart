@@ -1,6 +1,6 @@
-# README #
+# FullCart #
 
-This is the repository for FullCart on Google Play - https://play.google.com/store/apps/details?id=com.twisthenry8gmail.fullcart
+This is the repository for FullCart - [Google Play](https://play.google.com/store/apps/details?id=com.twisthenry8gmail.fullcart)
 
 Shopping lists don’t have to be complicated, that’s why we haven’t made them so.
 Easily add the items you need to your list, giving as much or little information as you want. Assign them to categories of your own choosing – a truly individual experience. FullCart lays your shopping list out in a simple design with everything you need right in front of you.
