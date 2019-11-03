@@ -12,32 +12,16 @@
         android:paddingTop="@dimen/margin"
         android:paddingBottom="@dimen/scroll_bottom_padding" />
 
-    <LinearLayout
+    <com.twisthenry8gmail.fullcart.EmptyView
         android:id="@+id/shopping_empty"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="@dimen/empty_padding"
-        android:visibility="gone"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:emptyImage="@drawable/empty"
+        app:emptyText="@string/shopping_empty"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:padding="@dimen/empty_image_padding"
-            android:src="@drawable/empty" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin"
-            android:gravity="center"
-            android:text="@string/shopping_empty" />
-    </LinearLayout>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
         android:id="@+id/list_loading"

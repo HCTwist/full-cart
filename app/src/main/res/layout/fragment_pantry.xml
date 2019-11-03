@@ -12,33 +12,16 @@
         android:paddingTop="@dimen/margin"
         android:paddingBottom="@dimen/scroll_bottom_padding" />
 
-    <LinearLayout
+    <com.twisthenry8gmail.fullcart.EmptyView
         android:id="@+id/pantry_empty"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="@dimen/empty_padding"
-        android:visibility="gone"
+        app:emptyText="@string/pantry_empty"
+        app:emptyImage="@drawable/empty"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:padding="@dimen/empty_image_padding"
-            android:src="@drawable/empty" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginTop="@dimen/margin"
-            android:text="@string/pantry_empty" />
-
-    </LinearLayout>
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <ProgressBar
         android:id="@+id/pantry_loading"

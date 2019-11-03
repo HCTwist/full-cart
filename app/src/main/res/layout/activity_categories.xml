@@ -30,32 +30,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/categories_toolbar" />
 
-    <LinearLayout
+    <com.twisthenry8gmail.fullcart.EmptyView
         android:id="@+id/categories_empty"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="@dimen/empty_padding"
-        android:visibility="gone"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:emptyImage="@drawable/empty_categories"
+        app:emptyText="@string/categories_empty"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/categories_toolbar">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/empty_image_padding"
-            android:adjustViewBounds="true"
-            android:src="@drawable/empty_categories" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin"
-            android:gravity="center"
-            android:text="@string/categories_empty" />
-
-    </LinearLayout>
+        app:layout_constraintTop_toBottomOf="@id/categories_toolbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
