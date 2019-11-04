@@ -295,7 +295,6 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
      */
     static boolean isPremium(Context context) {
 
-        if(1==1) return false;
         PremiumBillingHelper billingHelper = new PremiumBillingHelper(context);
         return billingHelper.isPremium();
     }

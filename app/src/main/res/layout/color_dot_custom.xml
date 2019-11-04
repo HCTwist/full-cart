@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/color_dot_custom_background"
+        android:layout_width="@dimen/color_dot_width"
+        android:layout_height="@dimen/color_dot_width"
+        android:background="@drawable/color_dot_ripple" />
+
+    <View
+        android:id="@+id/color_dot_custom_outline"
+        android:layout_width="@dimen/color_dot_width"
+        android:layout_height="@dimen/color_dot_width"
+        android:alpha="0"
+        android:background="@drawable/color_dot_outline" />
+
+    <ImageView
+        android:id="@+id/color_dot_custom_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/outline_color_lens_24"
+        android:tint="#000" />
+
+</FrameLayout>

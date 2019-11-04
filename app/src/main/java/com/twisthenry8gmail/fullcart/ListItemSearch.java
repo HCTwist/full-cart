@@ -57,7 +57,10 @@ public class ListItemSearch extends ListItemBase implements Comparable<ListItemS
     @Override
     public int compareTo(@NonNull ListItemSearch item) {
 
-        return (int) Math.round(item.getScore() - getScore());
+//        return (int) Math.round(item.getScore() - getScore());
+
+        //TODO See whether this solves the method violation issue
+        return Double.compare(item.getScore(), getScore());
     }
 
     @Override

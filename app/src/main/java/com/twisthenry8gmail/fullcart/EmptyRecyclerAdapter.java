@@ -109,9 +109,7 @@ abstract class EmptyRecyclerAdapter<VH extends RecyclerView.ViewHolder> extends 
 
     /**
      * Attempt to load the data set. This can be called safely multiple times and will only execute once.
-     * This relies on implementation being provided via the {@link #loadItems(Runnable)} method
-     *
-     * @param callback a callback to perform when loading is complete. Can be null
+     * This relies on implementation being provided via the {@link #loadItems()} method
      */
     void attemptLoad() {
 
@@ -122,7 +120,8 @@ abstract class EmptyRecyclerAdapter<VH extends RecyclerView.ViewHolder> extends 
     }
 
     /**
-     * Schedule a task to be run once the adapter has completed loading
+     * Schedule a task to be run once the adapter has completed loading. If the adapter has already
+     * loaded, the task is run immediately
      *
      * @param task the task to execute
      */

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -133,9 +134,7 @@ public class PremiumPreference extends SimplifiedDialogPreference {
 
         void onBuild(MaterialAlertDialogBuilder builder, View layout) {
 
-
         }
-
     }
 
     public static class UnpurchasedDialog extends PremiumDialog {
@@ -150,11 +149,9 @@ public class PremiumPreference extends SimplifiedDialogPreference {
         @Override
         void onBuild(MaterialAlertDialogBuilder builder, View layout) {
 
-            super.onBuild(builder, layout);
+            queryDetails();
 
             builder.setTitle(R.string.setting_category_premium);
-
-            queryDetails();
             builder.setPositiveButton(R.string.no_premium_positive, (dialog, which) -> billingHelper.startPurchase());
             builder.setNegativeButton(android.R.string.cancel, null);
 
@@ -220,7 +217,10 @@ public class PremiumPreference extends SimplifiedDialogPreference {
                         unavailableView.setVisibility(View.GONE);
                         positiveButton.setEnabled(true);
                         positiveButton.setText(R.string.no_premium_positive);
-                        positiveButton.setOnClickListener(v -> billingHelper.startPurchase());
+                        positiveButton.setOnClickListener(v -> {
+                            billingHelper.startPurchase();
+                            dismiss();
+                        });
                 }
             }
         }

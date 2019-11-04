@@ -34,6 +34,7 @@
         android:id="@+id/categories_empty"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:visibility="gone"
         app:emptyImage="@drawable/empty_categories"
         app:emptyText="@string/categories_empty"
         app:layout_constraintBottom_toBottomOf="parent"
