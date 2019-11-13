@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-    <dimen name="color_picker_dot_width">56dp</dimen>
-    <dimen name="color_picker_padding">24dp</dimen>
-
-    <dimen name="color_picker_seek_margin_rb">12dp</dimen>
-    <dimen name="color_picker_seek_margin_g">24dp</dimen>
-</resources>
