@@ -2,10 +2,7 @@ package com.twisthenry8gmail.fullcart;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.Color;
-import android.text.TextUtils;
 import android.util.AttributeSet;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.animation.AlphaAnimation;
 import android.widget.TextSwitcher;

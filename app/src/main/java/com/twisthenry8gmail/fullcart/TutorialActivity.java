@@ -3,6 +3,7 @@ package com.twisthenry8gmail.fullcart;
 import android.os.Bundle;
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -24,7 +25,8 @@ public class TutorialActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tutorial);
 
         ViewPager viewPager = findViewById(R.id.tutorial_view_pager);
-        viewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
+        viewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
+            @NonNull
             @Override
             public Fragment getItem(int position) {
 
@@ -44,7 +46,7 @@ public class TutorialActivity extends AppCompatActivity {
                         return TutorialFragment.getLastInstance();
                 }
 
-                return null;
+                return new Fragment();
             }
 
             @Override

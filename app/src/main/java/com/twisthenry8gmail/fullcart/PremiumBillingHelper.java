@@ -21,7 +21,7 @@ import java.util.List;
 class PremiumBillingHelper {
 
     static final String PREMIUM_PRODUCT_ID = "premium";
-    private static List<String> skuList = new ArrayList<>();
+    private static final List<String> skuList = new ArrayList<>();
 
     static {
         skuList.add(PREMIUM_PRODUCT_ID);

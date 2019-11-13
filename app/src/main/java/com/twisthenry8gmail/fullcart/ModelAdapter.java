@@ -1,15 +1,14 @@
 package com.twisthenry8gmail.fullcart;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.View;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 abstract class ModelAdapter<M extends Model<I>, I extends ListItem> extends EmptyRecyclerAdapter {
 

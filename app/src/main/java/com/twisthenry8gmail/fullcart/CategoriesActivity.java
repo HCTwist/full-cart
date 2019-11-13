@@ -112,7 +112,7 @@ public class CategoriesActivity extends AppCompatActivity implements CategoryBot
             SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(this).edit();
             editor.putString(Category.DEFAULT_NAME, newCategory.getName());
             editor.putInt(Category.DEFAULT_COLOR, newCategory.getColor());
-            editor.commit();
+            editor.apply();
             adapter.editDefaultCategory();
         }
 

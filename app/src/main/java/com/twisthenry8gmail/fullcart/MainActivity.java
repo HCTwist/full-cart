@@ -3,10 +3,12 @@ package com.twisthenry8gmail.fullcart;
 import android.animation.ArgbEvaluator;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.DisplayMetrics;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.animation.AnticipateInterpolator;
@@ -23,6 +25,8 @@ import androidx.constraintlayout.widget.Guideline;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.preference.PreferenceManager;
+import androidx.vectordrawable.graphics.drawable.Animatable2Compat;
+import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
@@ -77,6 +81,9 @@ public class MainActivity extends AppCompatActivity implements ByDatePicker.Call
     private static final String PAGE = "page";
 
     private ListItemShopping transferItem;
+
+    private static final int PREMIUM_ANIMATION_REPEATS = 5;
+    private int nPremiumAnimationRepeats = 0;
 
     @Override
     protected void onCreate(@Nullable final Bundle savedInstanceState) {
@@ -134,14 +141,6 @@ public class MainActivity extends AppCompatActivity implements ByDatePicker.Call
         //Maintain number of times someone has opened the app
         int nOpens = sharedPreferences.getInt(OPEN_COUNT, 1);
         sharedPreferences.edit().putInt(OPEN_COUNT, nOpens + 1).apply();
-        //Check if nOpens is 15, 45, 135 etc.
-        for (int i = 15; i <= nOpens; i *= 3) {
-
-            if (nOpens == i) {
-                //TODO Improve, animation/dot?
-                toolbar.getMenu().findItem(R.id.premium_menu_button).setIcon(R.drawable.outline_lock_highlighted_24);
-            }
-        }
 
         //Initialise view variables
         listButton = findViewById(R.id.button_list);
@@ -232,7 +231,42 @@ public class MainActivity extends AppCompatActivity implements ByDatePicker.Call
     protected void onResume() {
 
         super.onResume();
-        toolbar.getMenu().findItem(R.id.premium_menu_button).setVisible(!SettingsFragment.isPremium(this));
+
+        MenuItem premiumMenuItem = toolbar.getMenu().findItem(R.id.premium_menu_button);
+
+        if (SettingsFragment.isPremium(this)) {
+            premiumMenuItem.setVisible(false);
+        }
+        else {
+            premiumMenuItem.setVisible(true);
+            int nOpens = PreferenceManager.getDefaultSharedPreferences(this).getInt(OPEN_COUNT, 1);
+            //Check if nOpens is 15, 45, 135 etc.
+            for (int i = 15; i <= nOpens; i *= 3) {
+
+                if (nOpens == i) {
+                    AnimatedVectorDrawableCompat icon = AnimatedVectorDrawableCompat.create(this, R.drawable.lock_animated);
+                    premiumMenuItem.setIcon(icon);
+                    if (icon != null) {
+                        icon.registerAnimationCallback(new Animatable2Compat.AnimationCallback() {
+                            @Override
+                            public void onAnimationEnd(Drawable drawable) {
+
+                                if (nPremiumAnimationRepeats < PREMIUM_ANIMATION_REPEATS) {
+                                    icon.start();
+                                    nPremiumAnimationRepeats++;
+                                }
+                                else {
+                                    icon.unregisterAnimationCallback(this);
+                                    nPremiumAnimationRepeats = 0;
+                                }
+                            }
+                        });
+                        icon.start();
+                    }
+                    break;
+                }
+            }
+        }
     }
 
     @Override
@@ -523,12 +557,12 @@ public class MainActivity extends AppCompatActivity implements ByDatePicker.Call
         pantryButton.setTextColor(cPantry);
     }
 
-    int getStartPageIndex() {
+    private int getStartPageIndex() {
 
         return rtl ? 1 : 0;
     }
 
-    int getEndPageIndex() {
+    private int getEndPageIndex() {
 
         return rtl ? 0 : 1;
     }

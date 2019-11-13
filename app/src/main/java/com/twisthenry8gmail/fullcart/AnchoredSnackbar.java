@@ -1,11 +1,10 @@
 package com.twisthenry8gmail.fullcart;
 
 import android.view.View;
-import android.view.ViewGroup;
-
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.annotation.StringRes;
+
+import com.google.android.material.snackbar.Snackbar;
 
 /**
  * A utility class for displaying snackbars above the main {@link com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton}

@@ -2,8 +2,12 @@
   <dictionary name="Henry">
     <words>
       <w>bottomsheetmenu</w>
+      <w>librefranklin</w>
+      <w>recyclerview</w>
+      <w>roundedbottomsheet</w>
       <w>simplifiedpreferences</w>
       <w>twisthenry</w>
+      <w>unpurchased</w>
     </words>
   </dictionary>
 </component>

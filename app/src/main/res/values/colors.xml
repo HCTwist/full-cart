@@ -5,7 +5,6 @@
     <color name="accent">#00a6f0</color>
     <color name="body">#344851</color>
     <color name="body_secondary">#acbfc6</color>
-    <color name="background">#FAFAFA</color>
     <color name="error_color">#FFDD2C00</color>
 
     <color name="navigation_header">#dcfbff</color>

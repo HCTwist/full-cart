@@ -22,6 +22,7 @@
     <string name="add_category_name_error">This category already exists</string>
     <string name="add_category_color_label">Colour select</string>
     <string name="category_editing">Editing \'%1$s\'</string>
+    <string name="custom_color_cd">Custom colour</string>
 
     <!-- Shopping list -->
     <string name="shopping_empty">Your list is currently empty! Try adding something with the button below</string>
@@ -69,8 +70,6 @@
     <string name="tutorial_cd_shopping">Shopping list</string>
     <string name="tutorial_cd_plus">and</string>
     <string name="tutorial_cd_pantry">Pantry</string>
-
-    <!-- Premium -->
 
     <!-- Color pickers -->
     <string name="r">R</string>

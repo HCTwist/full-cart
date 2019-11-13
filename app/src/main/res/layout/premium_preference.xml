@@ -33,6 +33,7 @@
             android:orientation="vertical">
 
             <ImageView
+                android:contentDescription="@string/feature_dark_mode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
@@ -54,6 +55,7 @@
             android:orientation="vertical">
 
             <ImageView
+                android:contentDescription="@string/feature_custom_category_colors"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
@@ -74,6 +76,7 @@
             android:orientation="vertical">
 
             <ImageView
+                android:contentDescription="@string/feature_default_category"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"

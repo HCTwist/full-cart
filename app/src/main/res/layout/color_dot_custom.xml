@@ -21,6 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:contentDescription="@string/custom_color_cd"
         android:src="@drawable/outline_color_lens_24"
         android:tint="#000" />
 

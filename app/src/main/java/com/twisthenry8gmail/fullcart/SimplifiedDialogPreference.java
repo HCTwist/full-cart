@@ -11,12 +11,12 @@ import androidx.preference.PreferenceDialogFragmentCompat;
 
 public abstract class SimplifiedDialogPreference extends DialogPreference {
 
-    public SimplifiedDialogPreference(Context context, AttributeSet attrs) {
+    SimplifiedDialogPreference(Context context, AttributeSet attrs) {
 
         super(context, attrs);
     }
 
-    public static boolean onDisplayPreferenceDialog(Preference preference, Fragment settingsFragment) {
+    static boolean onDisplayPreferenceDialog(Preference preference, Fragment settingsFragment) {
 
         if (preference instanceof SimplifiedDialogPreference) {
             PreferenceDialogFragmentCompat dialog = ((SimplifiedDialogPreference) preference).getDialog(settingsFragment);
@@ -43,6 +43,6 @@ public abstract class SimplifiedDialogPreference extends DialogPreference {
 
     abstract static class PreferenceDialogFragmentCompatExposer extends PreferenceDialogFragmentCompat {
 
-        static String ARG_KEY = PreferenceDialogFragmentCompat.ARG_KEY;
+        static final String ARG_KEY = PreferenceDialogFragmentCompat.ARG_KEY;
     }
 }

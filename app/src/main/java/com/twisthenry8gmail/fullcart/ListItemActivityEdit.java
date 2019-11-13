@@ -2,8 +2,6 @@ package com.twisthenry8gmail.fullcart;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -16,7 +14,7 @@ import androidx.annotation.Nullable;
  */
 abstract class ListItemActivityEdit<I extends ListItem> extends ListItemActivity {
 
-    static final String SPINNER_POSITION = "spinner_position";
+    private static final String SPINNER_POSITION = "spinner_position";
     static final String OLD_ITEM = "old_item";
     static final String NEW_ITEM = "new_item";
     static final String DELETE = "delete";

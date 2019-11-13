@@ -1,7 +1,6 @@
 package com.twisthenry8gmail.fullcart;
 
 import android.content.Context;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Iterator;

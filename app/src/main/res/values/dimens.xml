@@ -38,7 +38,6 @@
     <dimen name="tutorial_arrow_margin">96dp</dimen>
 
     <!-- Settings -->
-    <dimen name="setting_premium_bullet_gap">6dp</dimen>
     <dimen name="setting_premium_images_padding">40dp</dimen>
 
     <!-- Color picker -->

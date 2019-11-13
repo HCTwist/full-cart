@@ -21,7 +21,7 @@ abstract class EmptyRecyclerAdapter<VH extends RecyclerView.ViewHolder> extends 
     private View loadingView;
     private View emptyView;
 
-    private ArrayList<Runnable> tasks = new ArrayList<>();
+    private final ArrayList<Runnable> tasks = new ArrayList<>();
 
     EmptyRecyclerAdapter() {
 

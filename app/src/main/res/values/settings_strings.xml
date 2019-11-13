@@ -44,7 +44,6 @@
     <string name="no_premium_positive">Purchase</string>
     <string name="premium_content">Thank you so much for supporting us, you now have access to all features.\n\nIf you have a feature in mind that you would like to see, please let me know and I will get back to you as soon as I can!</string>
     <string name="premium_positive">Feedback</string>
-    <string name="premium_feedback_subject">Feature request</string>
 
     <string name="dark_mode_def">On with battery saver</string>
     <string-array name="dark_modes_entries">

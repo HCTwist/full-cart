@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/FullCartClone.iml" filepath="$PROJECT_DIR$/FullCartClone.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FullCart.iml" filepath="$PROJECT_DIR$/FullCart.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/roundedbottomsheet/roundedbottomsheet.iml" filepath="$PROJECT_DIR$/roundedbottomsheet/roundedbottomsheet.iml" />
     </modules>

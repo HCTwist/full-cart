@@ -1,7 +1,6 @@
 package com.twisthenry8gmail.fullcart;
 
 import android.view.View;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;

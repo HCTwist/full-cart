@@ -6,7 +6,6 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,16 +13,17 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.HorizontalScrollView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Implementation of {@link ListItemActivity} for adding items
@@ -180,7 +180,7 @@ abstract class ListItemActivityAdd<I extends ListItem> extends ListItemActivity 
     }
 
     @Override
-    protected void onSaveInstanceState(Bundle outState) {
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
 
         save();
         super.onSaveInstanceState(outState);
@@ -253,7 +253,7 @@ abstract class ListItemActivityAdd<I extends ListItem> extends ListItemActivity 
         getCurrentChip().setTextColor(ColorUtil.getBlendedBody(accent));
     }
 
-    void saveAndClose() {
+    private void saveAndClose() {
 
         save();
 
@@ -264,7 +264,7 @@ abstract class ListItemActivityAdd<I extends ListItem> extends ListItemActivity 
         }
     }
 
-    void showExitDialog() {
+    private void showExitDialog() {
 
         ExitDialogFragment exitDialogFragment = ExitDialogFragment.getInstance(new ExitDialogFragment.ExitCallback() {
             @Override

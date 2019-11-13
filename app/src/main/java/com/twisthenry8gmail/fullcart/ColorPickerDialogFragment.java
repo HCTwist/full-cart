@@ -27,7 +27,7 @@ public class ColorPickerDialogFragment extends DialogFragment {
     private static final String COLOR = "color";
     private static final String BAR_COLOR = "bar_color";
 
-    private int[] rgb = {0, 0, 0};
+    private final int[] rgb = {0, 0, 0};
     @ColorInt
     private int seekBarColor = 0;
 
@@ -169,6 +169,4 @@ public class ColorPickerDialogFragment extends DialogFragment {
 
         void onConfirmColor(@ColorInt int color);
     }
-
-    abstract class ColorPickerFragment extends Fragment implements ColorPickerSelectListener {}
 }

@@ -4,8 +4,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.AttributeSet;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -30,9 +28,7 @@ public class PremiumPreference extends SimplifiedDialogPreference {
     }
 
     private boolean isPremium = false;
-    private PremiumBillingHelper billingHelper;
-
-    private PremiumBillingHelper.PremiumPurchaseUpdatedListener premiumListener;
+    private final PremiumBillingHelper billingHelper;
 
     public PremiumPreference(Context context, AttributeSet attrs) {
 
@@ -105,7 +101,7 @@ public class PremiumPreference extends SimplifiedDialogPreference {
 
             MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getContext());
 
-            View layout = LayoutInflater.from(getContext()).inflate(R.layout.premium_preference, null);
+            View layout = View.inflate(getContext(), R.layout.premium_preference, null);
 
             ViewFlipper images = layout.findViewById(R.id.premium_preference_images);
 
