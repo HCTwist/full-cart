@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/aboutFragment">
+
+    <fragment
+        android:id="@+id/addShoppingItemFragment"
+        android:name="uk.henrytwist.fullcart.view.item.addshoppingitem.AddShoppingItemFragment"
+        android:label="AddShoppingItemFragment">
+
+        <argument
+            android:name="listId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoriesFragment"
+        android:name="uk.henrytwist.fullcart.view.categories.CategoriesFragment"
+        android:label="CategoriesFragment">
+        <action
+            android:id="@+id/action_categoriesFragment_to_addCategoryFragment"
+            app:destination="@id/addCategoryFragment"
+            app:enterAnim="@anim/transition_rise_up_enter"
+            app:exitAnim="@anim/transition_fade_exit"
+            app:popEnterAnim="@anim/transition_fade_pop_enter"
+            app:popExitAnim="@anim/transition_rise_up_pop_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCategoryFragment"
+        android:name="uk.henrytwist.fullcart.view.addcategory.AddCategoryFragment"
+        android:label="AddCategoryFragment" />
+    <fragment
+        android:id="@+id/addPantryItemFragment"
+        android:name="uk.henrytwist.fullcart.view.item.addpantryitem.AddPantryItemFragment"
+        android:label="AddPantryItemFragment">
+        <argument
+            android:name="listId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/addListFragment"
+        android:name="uk.henrytwist.fullcart.view.addlist.AddListFragment"
+        android:label="AddListFragment">
+        <action
+            android:id="@+id/action_addListFragment_to_listContainerFragment"
+            app:destination="@id/listContainerFragment"
+            app:enterAnim="@anim/transition_rise_up_enter"
+            app:exitAnim="@anim/transition_rise_up_pop_exit"
+            app:popUpTo="@id/listContainerFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/listContainerFragment"
+        android:name="uk.henrytwist.fullcart.view.list.ListContainerFragment"
+        android:label="ListContainerFragment">
+        <action
+            android:id="@+id/action_listContainerFragment_to_addListFragment"
+            app:destination="@id/addListFragment"
+            app:enterAnim="@anim/transition_rise_up_enter"
+            app:exitAnim="@anim/transition_fade_exit"
+            app:popEnterAnim="@anim/transition_fade_pop_enter"
+            app:popExitAnim="@anim/transition_rise_up_pop_exit" />
+        <action
+            android:id="@+id/action_listContainerFragment_to_categoriesFragment"
+            app:destination="@id/categoriesFragment"
+            app:enterAnim="@anim/transition_rise_up_enter"
+            app:exitAnim="@anim/transition_fade_exit"
+            app:popEnterAnim="@anim/transition_fade_pop_enter"
+            app:popExitAnim="@anim/transition_rise_up_pop_exit" />
+        <action
+            android:id="@+id/action_listContainerFragment_to_addShoppingItemFragment"
+            app:destination="@id/addShoppingItemFragment"
+            app:enterAnim="@anim/transition_rise_up_enter"
+            app:exitAnim="@anim/transition_fade_exit"
+            app:popEnterAnim="@anim/transition_fade_pop_enter"
+            app:popExitAnim="@anim/transition_rise_up_pop_exit" />
+        <action
+            android:id="@+id/action_listContainerFragment_to_addPantryItemFragment"
+            app:destination="@id/addPantryItemFragment"
+            app:enterAnim="@anim/transition_rise_up_enter"
+            app:exitAnim="@anim/transition_fade_exit"
+            app:popEnterAnim="@anim/transition_fade_pop_enter"
+            app:popExitAnim="@anim/transition_rise_up_pop_exit" />
+        <action
+            android:id="@+id/action_listContainerFragment_self"
+            app:destination="@id/listContainerFragment"
+            app:enterAnim="@anim/transition_rise_up_enter"
+            app:exitAnim="@anim/transition_rise_up_pop_exit"
+            app:popUpTo="@id/listContainerFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_listContainerFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/transition_rise_up_enter"
+            app:exitAnim="@anim/transition_fade_exit"
+            app:popEnterAnim="@anim/transition_fade_pop_enter"
+            app:popExitAnim="@anim/transition_rise_up_pop_exit" />
+        <action
+            android:id="@+id/action_listContainerFragment_to_editShoppingItemFragment"
+            app:destination="@id/editShoppingItemFragment"
+            app:enterAnim="@anim/transition_rise_up_enter"
+            app:exitAnim="@anim/transition_fade_exit"
+            app:popEnterAnim="@anim/transition_fade_pop_enter"
+            app:popExitAnim="@anim/transition_rise_up_pop_exit" />
+        <action
+            android:id="@+id/action_listContainerFragment_to_editPantryItemFragment"
+            app:destination="@id/editPantryItemFragment"
+            app:enterAnim="@anim/transition_rise_up_enter"
+            app:exitAnim="@anim/transition_fade_exit"
+            app:popEnterAnim="@anim/transition_fade_pop_enter"
+            app:popExitAnim="@anim/transition_rise_up_pop_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="uk.henrytwist.fullcart.view.settings.SettingsContainerFragment"
+        android:label="SettingsFragment" >
+        <action
+            android:id="@+id/action_settingsFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment"
+            app:enterAnim="@anim/transition_rise_up_enter"
+            app:exitAnim="@anim/transition_fade_exit"
+            app:popEnterAnim="@anim/transition_fade_pop_enter"
+            app:popExitAnim="@anim/transition_rise_up_pop_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/editShoppingItemFragment"
+        android:name="uk.henrytwist.fullcart.view.item.editshoppingitem.EditShoppingItemFragment"
+        android:label="EditShoppingItemFragment">
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/editPantryItemFragment"
+        android:name="uk.henrytwist.fullcart.view.item.editpantryitem.EditPantryItemFragment"
+        android:label="EditPantryItemFragment">
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/onboardingFragment"
+        android:name="uk.henrytwist.fullcart.view.onboarding.OnboardingFragment"
+        android:label="OnboardingFragment" >
+        <action
+            android:id="@+id/action_onboardingFragment_to_listContainerFragment"
+            app:destination="@id/listContainerFragment"
+            app:enterAnim="@anim/transition_rise_up_enter"
+            app:exitAnim="@anim/transition_fade_exit"
+            app:popUpTo="@id/onboardingFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="uk.henrytwist.fullcart.view.about.AboutFragment"
+        android:label="AboutFragment" />
+</navigation>

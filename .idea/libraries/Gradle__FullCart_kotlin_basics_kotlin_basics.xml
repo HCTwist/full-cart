@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: FullCart.kotlin-basics.kotlin-basics">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../Source/kotlin-basics/build/libs/kotlin-basics.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

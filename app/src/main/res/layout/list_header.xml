@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="title"
+            type="String" />
+
+        <variable
+            name="showTouchPrompt"
+            type="boolean" />
+
+        <variable
+            name="handler"
+            type="uk.henrytwist.fullcart.view.list.ListHeaderAdapter.Handler" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/content_margin">
+
+        <TextView
+            android:id="@+id/list_header_title"
+            style="@style/Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/layout_margin_horizontal"
+            android:layout_marginTop="@dimen/layout_margin_top"
+            android:drawablePadding="8dp"
+            android:onClick="@{() -> handler.onTitleClick()}"
+            android:text="@{title}"
+            app:drawableEndCompat="@drawable/outline_arrow_drop_down_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <uk.henrytwist.fullcart.view.list.TouchHighlightView
+            goneUnless="@{showTouchPrompt}"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:layout_constraintBottom_toBottomOf="@id/list_header_title"
+            app:layout_constraintEnd_toEndOf="@id/list_header_title"
+            app:layout_constraintStart_toStartOf="@id/list_header_title"
+            app:layout_constraintTop_toTopOf="@id/list_header_title" />
+
+        <uk.henrytwist.buttons.AccessibleTouchImageButton
+            style="@style/IconButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/layout_margin_horizontal"
+            android:onClick="@{() -> handler.onMenuClick()}"
+            android:src="@drawable/outline_more_vert_24"
+            app:layout_constraintBottom_toBottomOf="@id/list_header_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/list_header_title" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

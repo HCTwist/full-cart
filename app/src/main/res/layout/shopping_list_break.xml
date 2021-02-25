@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="uk.henrytwist.fullcart.view.ListItemFormatter" />
+
+        <variable
+            name="divider"
+            type="uk.henrytwist.fullcart.view.list.shoppinglist.ShoppingListRow.Divider" />
+
+        <variable
+            name="handler"
+            type="uk.henrytwist.fullcart.view.list.shoppinglist.ShoppingItemsAdapter.Handler" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/content_margin"
+        android:paddingBottom="@dimen/sub_content_margin">
+
+        <View
+            android:id="@+id/break_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/low_emphasis_stroke"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/break_delete"
+            style="@style/ActionChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/layout_margin_horizontal"
+            android:layout_marginTop="@dimen/sub_content_margin"
+            android:onClick="@{() -> handler.onDeleteCheckedClicked()}"
+            android:text="@string/delete_all_checked"
+            app:chipIcon="@drawable/outline_delete_outline_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/break_divider" />
+
+        <com.google.android.material.chip.Chip
+            style="@style/ActionChip"
+            goneUnless="@{divider.showMoveToPantry}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/horizontal_icon_margin"
+            android:onClick="@{() -> handler.onMoveCheckedToPantryClicked()}"
+            android:text="@{ListItemFormatter.INSTANCE.resolveMoveToPantryButtonText(context, divider)}"
+            app:chipIcon="@drawable/outline_kitchen_24"
+            app:layout_constraintStart_toEndOf="@id/break_delete"
+            app:layout_constraintTop_toTopOf="@id/break_delete" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

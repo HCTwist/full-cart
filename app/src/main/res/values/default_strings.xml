@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="default_shopping_list_name">Shopping list</string>
+    <string name="default_pantry_name">Pantry</string>
+</resources>

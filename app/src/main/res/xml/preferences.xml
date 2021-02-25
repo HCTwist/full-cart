@@ -2,114 +2,92 @@
 <androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <PreferenceCategory app:title="@string/setting_category_notifications">
+    <PreferenceCategory app:title="@string/setting_category_general">
+
+        <ListPreference
+            app:defaultValue="0"
+            app:entries="@array/setting_dark_mode_entries"
+            app:entryValues="@array/setting_dark_mode_entryValues"
+            app:icon="@drawable/outline_dark_mode_24"
+            app:key="@string/setting_dark_mode_key"
+            app:title="@string/setting_dark_mode"
+            app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:allowDividerAbove="false"
+        app:title="@string/setting_category_notifications">
 
         <Preference
-            app:key="notifications"
+            app:icon="@drawable/outline_notifications_24"
+            app:key="@string/setting_notifications_key"
             app:title="@string/setting_notifications" />
 
-        <com.twisthenry8gmail.fullcart.TimePickerPreference
-            app:defaultValue="09:00"
-            app:key="use_by_notify_time"
+        <uk.henrytwist.fullcart.view.settings.NotificationTimePickerPreference
+            app:icon="@drawable/outline_alarm_24"
+            app:key="@string/setting_use_by_notify_time_key"
             app:title="@string/setting_use_by_notify_time" />
 
     </PreferenceCategory>
 
-    <PreferenceCategory app:title="@string/setting_category_general">
-
-        <SwitchPreference
-            app:defaultValue="false"
-            app:key="show_pantry"
-            app:title="@string/setting_show_pantry" />
-
-        <SwitchPreference
-            app:defaultValue="false"
-            app:key="lock_rotation"
-            app:title="@string/setting_lock_rotation" />
-
-        <ListPreference
-            app:defaultValue="0"
-            app:entries="@array/dark_modes_entries"
-            app:entryValues="@array/dark_modes_entryValues"
-            app:key="dark_mode"
-            app:title="@string/setting_dark_mode"
-            app:useSimpleSummaryProvider="true" />
-
-        <Preference
-            app:key="show_tutorial"
-            app:title="@string/setting_show_tutorial" />
-
-    </PreferenceCategory>
-
-    <!--</androidx.preference.PreferenceCategory>-->
-
-    <PreferenceCategory android:title="@string/setting_category_shopping">
+    <PreferenceCategory
+        android:title="@string/setting_category_shopping"
+        app:allowDividerAbove="false">
 
         <ListPreference
             app:defaultValue="0"
             app:entries="@array/auto_delete_checked_entries"
             app:entryValues="@array/auto_delete_checked_entryValues"
-            app:key="auto_delete_checked"
+            app:icon="@drawable/outline_auto_delete_24"
+            app:key="@string/setting_auto_delete_checked_key"
             app:title="@string/setting_auto_delete_checked"
             app:useSimpleSummaryProvider="true" />
 
     </PreferenceCategory>
 
-    <PreferenceCategory app:title="@string/setting_category_pantry">
-
-        <SwitchPreference
-            app:defaultValue="false"
-            app:key="best_before_default"
-            app:title="@string/setting_by_date_default" />
-
-        <SwitchPreference
-            app:defaultValue="true"
-            app:key="ask_use_by"
-            app:title="@string/setting_ask_use_by" />
+    <PreferenceCategory
+        app:allowDividerAbove="false"
+        app:title="@string/setting_category_pantry">
 
         <ListPreference
             app:defaultValue="2"
             app:entries="@array/use_by_entries"
             app:entryValues="@array/use_by_entryValues"
-            app:key="mark_use_by"
+            app:icon="@drawable/outline_warning_amber_24"
+            app:key="@string/setting_mark_use_by_key"
             app:title="@string/setting_mark_use_by"
             app:useSimpleSummaryProvider="true" />
 
-        <ListPreference
-            app:defaultValue="1"
-            app:entries="@array/pantry_date_format"
-            app:entryValues="@array/pantry_date_formatValues"
-            app:key="pantry_date_formatting"
-            app:title="@string/setting_pantry_date_format"
-            app:useSimpleSummaryProvider="true" />
-
     </PreferenceCategory>
 
-    <PreferenceCategory app:title="@string/setting_category_search">
-
-        <SwitchPreference
-            app:defaultValue="true"
-            app:key="show_category_letters"
-            app:title="@string/setting_show_category_letters" />
+    <PreferenceCategory
+        app:allowDividerAbove="false"
+        app:title="@string/setting_category_about">
 
         <Preference
-            app:key="clear_search_db"
-            app:title="@string/setting_search_db" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory app:title="@string/setting_category_feedback">
+            app:icon="@drawable/outline_star_outline_24"
+            app:key="@string/setting_rating_key"
+            app:summary="@string/setting_rating_summary"
+            app:title="@string/setting_rating" />
 
         <Preference
-            app:key="email"
-            app:summary="@string/setting_category_email_summary"
-            app:title="@string/setting_category_email" />
-
+            app:icon="@drawable/outline_email_24"
+            app:key="@string/setting_email_key"
+            app:summary="@string/setting_email_summary"
+            app:title="@string/setting_email" />
     </PreferenceCategory>
 
-    <PreferenceCategory app:title="@string/setting_category_premium">
+    <Preference
+        app:icon="@drawable/outline_code_24"
+        app:key="@string/setting_about_key"
+        app:title="@string/setting_about" />
 
-        <com.twisthenry8gmail.fullcart.PremiumPreference />
+    <PreferenceCategory
+        app:allowDividerAbove="false"
+        app:isPreferenceVisible="false"
+        app:title="@string/setting_category_premium">
+
+        <!--        <uk.henrytwist.fullcart.PremiumPreference />-->
 
     </PreferenceCategory>
 

@@ -1,1 +1,5 @@
-include ':app', ':roundedbottomsheet'
+include ':app', ':kotlin-basics', ':android-basics', ':buttons', ':selectslider'
+project(':kotlin-basics').projectDir = new File('C:/Users/henry/Documents/Projects/Source/kotlin-basics')
+project(':android-basics').projectDir = new File('C:/Users/henry/Documents/Projects/Source/android-basics')
+project(':buttons').projectDir = new File('C:/Users/henry/Documents/Projects/Source/buttons')
+project(':selectslider').projectDir = new File('C:/Users/henry/Documents/Projects/Source/selectslider')

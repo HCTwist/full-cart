@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-    <!-- TODO Test when Q is available -->
-    <string name="dark_mode_def">System default</string>
-</resources>

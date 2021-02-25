@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingHorizontal="@dimen/layout_margin_horizontal"
+    android:paddingVertical="@dimen/list_item_vertical_padding">
+
+    <ImageView
+        android:id="@+id/shopping_item_dot"
+        android:layout_width="@dimen/category_dot_size"
+        android:layout_height="@dimen/category_dot_size"
+        android:contentDescription="@null"
+        android:src="@drawable/loading_skeleton_background" />
+
+    <TextView
+        android:id="@+id/shopping_item_title"
+        style="@style/ListItemTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/horizontal_icon_margin"
+        android:layout_weight="1"
+        android:background="@drawable/loading_skeleton_background" />
+
+    <View
+        android:layout_width="@dimen/list_icon_size"
+        android:layout_height="@dimen/list_icon_size"
+        android:background="@drawable/loading_skeleton_background" />
+</LinearLayout>

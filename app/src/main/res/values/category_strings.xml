@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="category_color_fruit">Peach</string>
+    <string name="category_color_vegetables">Avocado</string>
+    <string name="category_color_fish">Ocean</string>
+    <string name="category_color_meat">Oxymyoglobin</string>
+    <string name="category_color_bakery">Panini</string>
+    <string name="category_color_drinks">TODO</string>
+    <string name="category_color_treats">TODO</string>
+    <string name="category_color_household">TODO</string>
+    <string name="category_color_freezer">Ice</string>
+    <string name="category_color_personal_care">TODO</string>
+    <string name="category_color_herbs_spices">Turmeric</string>
+    <string name="category_color_baby">TODO</string>
+    <string name="category_color_dairy">TODO</string>
+
+    <string name="category_name_fruit">Fruit</string>
+    <string name="category_name_vegetables">Vegetables</string>
+    <string name="category_name_fish">Fish</string>
+    <string name="category_name_meat">Meat</string>
+    <string name="category_name_bakery">Bakery</string>
+    <string name="category_name_drinks">Drinks</string>
+    <string name="category_name_treats">Treats</string>
+    <string name="category_name_household">Household</string>
+    <string name="category_name_freezer">Freezer</string>
+    <string name="category_name_personal_care">Personal Care</string>
+    <string name="category_name_herbs_spices">Herbs and Spices</string>
+    <string name="category_name_baby">Baby</string>
+    <string name="category_name_dairy">Dairy</string>
+</resources>

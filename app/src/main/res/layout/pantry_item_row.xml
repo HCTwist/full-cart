@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="uk.henrytwist.fullcart.view.ListItemFormatter" />
+
+        <variable
+            name="item"
+            type="uk.henrytwist.fullcart.models.PantryItemSummary" />
+
+        <variable
+            name="handler"
+            type="uk.henrytwist.fullcart.view.list.pantry.PantryAdapter.Handler" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> handler.onPantryItemClicked(item)}"
+        android:paddingHorizontal="@dimen/layout_margin_horizontal"
+        android:paddingVertical="@dimen/list_item_vertical_padding">
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="pantry_item_dot, pantry_item_title_dummy, pantry_item_decrement"
+            app:flow_horizontalGap="@dimen/horizontal_icon_margin"
+            app:flow_horizontalStyle="spread"
+            app:flow_verticalAlign="center"
+            app:flow_wrapMode="none"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <uk.henrytwist.fullcart.view.components.categories.CategoryDotView
+            android:id="@+id/pantry_item_dot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            bind:color="@{ListItemFormatter.INSTANCE.resolveCategoryColor(context, item.category)}" />
+
+        <TextView
+            android:id="@+id/pantry_item_title_dummy"
+            style="@style/ListItemTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <uk.henrytwist.buttons.AccessibleTouchImageButton
+            android:id="@+id/pantry_item_decrement"
+            style="@style/IconButton"
+            android:layout_width="@dimen/list_icon_size"
+            android:layout_height="@dimen/list_icon_size"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:onClick="@{() -> handler.onPantryItemDecrementClicked(item)}"
+            android:src="@{item.quantity.canDecrement() ? @drawable/outline_remove_circle_outline_24 : @drawable/outline_remove_clear_circle_outline_24}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/pantry_item_title"
+            style="@style/ListItemTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{ListItemFormatter.INSTANCE.buildItemTitle(context, item)}"
+            app:layout_constraintEnd_toEndOf="@id/pantry_item_title_dummy"
+            app:layout_constraintStart_toStartOf="@id/pantry_item_title_dummy"
+            app:layout_constraintTop_toTopOf="@id/pantry_item_title_dummy" />
+
+        <uk.henrytwist.fullcart.view.components.TagChip
+            android:id="@+id/pantry_item_use_by"
+            goneUnless="@{item.hasUseByDate()}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{ListItemFormatter.INSTANCE.getUseByDateSummary(context, item.useByDate)}"
+            app:layout_constraintStart_toStartOf="@id/pantry_item_title"
+            app:layout_constraintTop_toBottomOf="@id/pantry_item_title"
+            bind:tagColor="@{ListItemFormatter.INSTANCE.resolveUseByDateTextColor(context, item.useByDate, item.toUseSoon)}" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

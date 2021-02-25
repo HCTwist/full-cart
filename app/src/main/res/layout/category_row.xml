@@ -1,52 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/categories_list_height"
-    android:background="?attr/selectableItemBackground"
-    android:paddingStart="@dimen/margin"
-    android:paddingEnd="@dimen/margin">
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
-        android:id="@+id/category_row_dot"
-        android:layout_width="@dimen/list_progress_dot_width"
-        android:layout_height="@dimen/list_progress_dot_width"
-        android:layout_gravity="center_vertical"
-        android:background="@drawable/dot"
-        android:contentDescription="@string/category_color_cd"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
 
-    <TextView
-        android:id="@+id/category_row_text"
-        android:layout_width="0dp"
+        <import type="uk.henrytwist.fullcart.view.ListItemFormatter" />
+
+        <variable
+            name="category"
+            type="uk.henrytwist.fullcart.models.Category" />
+
+        <variable
+            name="handler"
+            type="uk.henrytwist.fullcart.view.categories.CategoriesAdapter.Handler" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin"
-        android:ellipsize="end"
-        android:lines="1"
-        android:textColor="@color/body"
-        android:textSize="@dimen/medium_font"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/category_row_def_tag"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toEndOf="@id/category_row_dot"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_default="wrap" />
+        android:gravity="center_vertical"
+        android:onClick="@{() -> handler.onCategoryClicked(category)}"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/layout_margin_horizontal"
+        android:paddingVertical="@dimen/list_item_vertical_padding">
 
-    <TextView
-        android:id="@+id/category_row_def_tag"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin"
-        android:text="@string/category_default_tag"
-        android:textAllCaps="true"
-        android:textColor="?android:attr/textColorSecondary"
-        android:textSize="@dimen/small_font"
-        android:visibility="gone"
-        app:layout_constraintBaseline_toBaselineOf="@id/category_row_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/category_row_text" />
+        <uk.henrytwist.fullcart.view.components.categories.CategoryDotView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            bind:color="@{ListItemFormatter.INSTANCE.resolveCategoryColor(context, category)}" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            style="@style/ListItemTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/horizontal_icon_margin"
+            android:text="@{category.name}" />
+
+        <uk.henrytwist.fullcart.view.components.TagChip
+            goneUnless="@{category.isDefault}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/horizontal_icon_margin"
+            android:text="@string/category_default"
+            android:textAllCaps="true"
+            app:tagColor="?android:attr/textColorSecondary" />
+    </LinearLayout>
+</layout>

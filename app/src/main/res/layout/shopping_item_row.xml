@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="uk.henrytwist.fullcart.view.ListItemFormatter" />
+
+        <variable
+            name="item"
+            type="uk.henrytwist.fullcart.models.ShoppingItemSummary" />
+
+        <variable
+            name="handler"
+            type="uk.henrytwist.fullcart.view.list.shoppinglist.ShoppingItemsAdapter.Handler" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:onClick="@{() -> handler.onItemClicked(item)}"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/layout_margin_horizontal"
+        android:paddingVertical="@dimen/list_item_vertical_padding">
+
+        <uk.henrytwist.fullcart.view.components.categories.CategoryDotView
+            android:id="@+id/shopping_item_dot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            bind:color="@{ListItemFormatter.INSTANCE.resolveCategoryColor(context, item.category)}" />
+
+        <uk.henrytwist.fullcart.view.components.strikeview.StrikeTextView
+            android:id="@+id/shopping_item_title"
+            style="@style/ListItemTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/horizontal_icon_margin"
+            android:layout_weight="1"
+            android:alpha="@{item.checked ? 0.4F : 1F}"
+            android:text="@{ListItemFormatter.INSTANCE.buildItemTitle(context, item)}"
+            bind:struck="@{item.checked}" />
+
+        <uk.henrytwist.buttons.AccessibleTouchImageButton
+            android:id="@+id/pantry_item_increment"
+            android:layout_width="@dimen/list_icon_size"
+            android:layout_height="@dimen/list_icon_size"
+            android:alpha="@{item.checked ? 0.4F : 1F}"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:onClick="@{() -> handler.onItemChecked(item)}"
+            android:src="@{item.checked ? @drawable/check_circle_outline_24 : @drawable/outline_circle_24}"
+            app:touchPadding="@dimen/list_icon_touch_padding" />
+    </LinearLayout>
+</layout>

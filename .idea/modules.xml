@@ -3,8 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FullCart.iml" filepath="$PROJECT_DIR$/FullCart.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/roundedbottomsheet/roundedbottomsheet.iml" filepath="$PROJECT_DIR$/roundedbottomsheet/roundedbottomsheet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1542618831/FullCart.android-basics.iml" filepath="$PROJECT_DIR$/.idea/modules/1542618831/FullCart.android-basics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/FullCart.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/FullCart.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1543019179/FullCart.buttons.iml" filepath="$PROJECT_DIR$/.idea/modules/-1543019179/FullCart.buttons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-151517403/FullCart.kotlin-basics.iml" filepath="$PROJECT_DIR$/.idea/modules/-151517403/FullCart.kotlin-basics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-100081783/FullCart.selectslider.iml" filepath="$PROJECT_DIR$/.idea/modules/-100081783/FullCart.selectslider.iml" />
     </modules>
   </component>
 </project>

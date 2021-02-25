@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="onboarding_shopping_title">Shopping lists</string>
+    <string name="onboarding_shopping_description">Create easy to use shopping lists to make food shopping faster and simpler.</string>
+
+    <string name="onboarding_pantry_title">Pantries</string>
+    <string name="onboarding_pantry_description">Use a pantry to keep track of the food you have and set use by dates to help end the trend towards food waste.</string>
+
+    <string name="onboarding_notifications_title">Notifications</string>
+    <string name="onboarding_notifications_description">Get customisable notifications when you have food to use.</string>
+
+    <string name="onboarding_end_title">Over to you</string>
+    <string name="onboarding_end_description">We hope you enjoy using FullCart</string>
+    <string name="onboarding_end_add_shopping_list">Add a starting shopping list</string>
+    <string name="onboarding_end_add_pantry">Add a starting pantry</string>
+    <string name="onboarding_end_add_categories">Add some premade categories</string>
+</resources>

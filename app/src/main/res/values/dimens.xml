@@ -1,70 +1,59 @@
 <resources>
 
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="half_margin">8dp</dimen>
-    <dimen name="margin">16dp</dimen>
-    <dimen name="large_margin">24dp</dimen>
-    <dimen name="double_margin">32dp</dimen>
-    <dimen name="xl_margin">48dp</dimen>
-    <dimen name="xxl_margin">72dp</dimen>
+    <!-- Layout -->
+    <dimen name="layout_margin_horizontal">24dp</dimen>
+    <dimen name="layout_margin_top">48dp</dimen>
+    <dimen name="layout_margin_bottom">56dp</dimen>
 
-    <!-- Nav header -->
-    <dimen name="nav_header_corner_radii">18dp</dimen>
-    <dimen name="nav_header_vertical_padding">9dp</dimen>
+    <dimen name="fab_margin_bottom">48dp</dimen>
+    <dimen name="layout_margin_bottom_with_fab">120dp</dimen>
 
-    <!-- Main -->
-    <dimen name="pantry_transfer_dot_width">8dp</dimen>
+    <dimen name="nav_button_layout_margin_top">16dp</dimen>
+    <dimen name="nav_button_margin">32dp</dimen>
+
+    <dimen name="menu_layout_margin_vertical">24dp</dimen>
+
+    <dimen name="content_margin_top">48dp</dimen>
+    <dimen name="content_margin">48dp</dimen>
+    <dimen name="sub_content_margin">16dp</dimen>
+
+    <dimen name="horizontal_icon_margin">24dp</dimen>
+
+    <dimen name="min_touch_height">48dp</dimen>
+
+    <dimen name="illustration_layout_margin">48dp</dimen>
+
+    <!-- Visuals -->
+    <dimen name="corner_radius">12dp</dimen>
+    <dimen name="stroke_width">1dp</dimen>
+
+    <dimen name="button_padding_horizontal">24dp</dimen>
+    <dimen name="button_padding_vertical">12dp</dimen>
+
+    <dimen name="card_padding_horizontal">24dp</dimen>
+    <dimen name="card_padding_vertical">24dp</dimen>
+
+    <dimen name="list_item_vertical_padding">12dp</dimen>
+
+    <dimen name="button_icon_size">20dp</dimen>
+
+    <!-- Color swatches -->
+    <dimen name="color_swatch_size">56dp</dimen>
+    <dimen name="color_swatch_border">6dp</dimen>
+    <dimen name="color_swatch_margin">8dp</dimen>
 
     <!-- Categories -->
-    <dimen name="categories_list_height">56dp</dimen>
-    <dimen name="categories_spinner_list_height">40dp</dimen>
-    <dimen name="categories_dot_width_spinner">24dp</dimen>
+    <dimen name="category_dot_size">10dp</dimen>
 
-    <!-- List -->
-    <dimen name="list_progress_dot_width">32dp</dimen>
-    <dimen name="list_tick_padding">6dp</dimen>
-    <dimen name="basket_header_rounding">24dp</dimen>
-    <dimen name="basket_header_padding_top">12dp</dimen>
+    <dimen name="category_button_min_width">192dp</dimen>
 
-    <!-- Add item -->
-    <dimen name="search_dot">24dp</dimen>
-    <dimen name="add_item_input_margin">12dp</dimen>
-    <dimen name="item_card_elevation">8dp</dimen>
-    <dimen name="item_chip_min_width">128dp</dimen>
-    <dimen name="item_chip_no_stroke">0dp</dimen>
-    <dimen name="item_chip_stroke">3dp</dimen>
+    <!-- Lists -->
+    <dimen name="list_icon_size">22dp</dimen>
+    <dimen name="list_icon_touch_padding">13dp</dimen>
 
-    <!-- Tutorial -->
-    <dimen name="tutorial_arrow_margin">96dp</dimen>
+    <dimen name="text_strike_height">2dp</dimen>
 
-    <!-- Settings -->
-    <dimen name="setting_premium_images_padding">40dp</dimen>
-
-    <!-- Color picker -->
-    <dimen name="picker_palette_height">172dp</dimen>
-    <dimen name="picker_color_input_min_width">64dp</dimen>
-    <dimen name="color_dot_width">48dp</dimen>
-    <dimen name="color_dot_margin">32dp</dimen>
-    <dimen name="color_dot_tick_width">16dp</dimen>
-    <dimen name="color_dot_outline_width">4dp</dimen>
-
-    <!-- General -->
-    <dimen name="big_font">24sp</dimen>
-    <dimen name="medium_font">16sp</dimen>
-    <dimen name="small_font">12sp</dimen>
-
-    <dimen name="list_action_size">36dp</dimen>
-    <dimen name="list_action_padding">6dp</dimen>
-
-    <dimen name="dot_donut_stroke">2dp</dimen>
-
-    <dimen name="corner_rounding">12dp</dimen>
-
-    <dimen name="empty_padding">72dp</dimen>
-    <dimen name="empty_image_padding">32dp</dimen>
-
-    <dimen name="scroll_bottom_padding">72dp</dimen>
-
-    <dimen name="dialog_margin">24dp</dimen>
-
+    <!-- Edit item -->
+    <dimen name="quantity_slider_gap">36dp</dimen>
+    <dimen name="quantity_slider_vertical_padding">20dp</dimen>
 </resources>

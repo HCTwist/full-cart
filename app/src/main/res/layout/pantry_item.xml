@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="uk.henrytwist.fullcart.view.ListItemFormatter" />
+
+        <variable
+            name="viewModel"
+            type="uk.henrytwist.fullcart.view.pantryitem.PantryItemViewModel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/item"
+            layout="@layout/item"
+            bind:viewModel="@{viewModel}" />
+
+        <LinearLayout
+            android:id="@+id/add_pantry_item_use_by"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/content_margin"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:minHeight="@dimen/min_touch_height"
+            android:onClick="@{() -> viewModel.onUseByDateClicked()}"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/layout_margin_horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/outline_event_24" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/horizontal_icon_margin"
+                android:layout_marginEnd="@dimen/layout_margin_horizontal"
+                android:layout_weight="1"
+                android:enabled="@{viewModel.useByDate != null}"
+                android:text="@{ListItemFormatter.INSTANCE.getUseByDateHint(context, viewModel.useByDate)}"
+                android:textColor="@color/disableable_text" />
+
+            <uk.henrytwist.buttons.AccessibleTouchImageButton
+                style="@style/IconButton"
+                invisibleUnless="@{viewModel.useByDate != null}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> viewModel.onUseByDateCleared()}"
+                android:src="@drawable/outline_close_24"
+                app:touchPadding="12dp" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

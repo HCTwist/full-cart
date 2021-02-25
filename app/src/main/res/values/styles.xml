@@ -1,98 +1,200 @@
 <resources>
 
-    <style name="AppTheme" parent="MainTheme">
-        <item name="android:statusBarColor">@color/primary</item>
-    </style>
+    <style name="AppTheme" parent="BaseTheme" />
 
-    <style name="MainTheme" parent="BaseTheme">
+    <style name="BaseTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <item name="android:statusBarColor">?android:attr/colorBackground</item>
+
         <item name="colorPrimary">@color/primary</item>
-        <item name="colorAccent">@color/accent</item>
-        <item name="colorSecondary">@color/body</item>
-        <item name="android:windowContentTransitions">true</item>
-        <item name="bottomSheetDialogTheme">@style/AppBottomSheet</item>
+        <item name="colorSecondary">@color/secondary</item>
+
+        <item name="colorControlNormal">?android:attr/textColorPrimary</item>
+
+        <item name="shapeAppearanceSmallComponent">@style/ShapeSmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeMediumComponent</item>
+
+        <item name="materialCardViewStyle">@style/MaterialCardView</item>
+        <item name="materialButtonStyle">@style/MaterialButton</item>
+        <item name="navigationViewStyle">@style/NavigationView</item>
+        <item name="materialAlertDialogTheme">@style/MaterialAlertDialog</item>
+        <item name="checkboxStyle">@style/CheckBox</item>
+
+        <item name="android:listPreferredItemPaddingStart">@dimen/layout_margin_horizontal</item>
+        <item name="android:listPreferredItemPaddingEnd">@dimen/layout_margin_horizontal</item>
     </style>
 
-    <style name="BaseTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar" />
+    <style name="MaterialAlertDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
 
-    <style name="Input">
-        <item name="android:inputType">textAutoCorrect|textCapSentences</item>
+        <item name="materialAlertDialogTitleTextStyle">@style/MaterialAlertDialogTitle</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/MaterialAlertDialogBody</item>
     </style>
 
-    <style name="TutorialTitle">
-        <item name="android:gravity">center</item>
-        <item name="android:textSize">32sp</item>
-        <item name="android:fontFamily">@font/librefranklin_regular</item>
+    <style name="MaterialAlertDialogTitle" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
+
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="TutorialText">
-        <item name="android:textSize">@dimen/medium_font</item>
-        <item name="android:gravity">center_horizontal</item>
-        <item name="android:paddingStart">@dimen/xl_margin</item>
-        <item name="android:paddingEnd">@dimen/xl_margin</item>
+    <style name="MaterialAlertDialogBody">
+
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
     </style>
 
-    <style name="NoAutoFill" />
+    <style name="ShapeSmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
 
-    <style name="ToolbarTitle">
-        <item name="android:fontFamily">@font/librefranklin_regular</item>
+        <item name="cornerSize">@dimen/corner_radius</item>
+    </style>
+
+    <style name="ShapeMediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+
+        <item name="cornerSize">@dimen/corner_radius</item>
+    </style>
+
+    <style name="MaterialCardView" parent="Widget.MaterialComponents.CardView">
+
+        <item name="cardElevation">0dp</item>
+    </style>
+
+    <style name="ChoiceChip" parent="Widget.MaterialComponents.Chip.Choice">
+
+        <item name="android:minWidth">96dp</item>
+
+        <item name="android:textAlignment">center</item>
+
+        <item name="android:stateListAnimator">@null</item>
+        <item name="chipStrokeWidth">@dimen/stroke_width</item>
+        <item name="chipStrokeColor">@color/checkable_stroke</item>
+        <item name="android:textColor">@color/checkable_text</item>
+        <item name="chipBackgroundColor">@color/checkable_background</item>
+        <item name="chipSurfaceColor">?android:attr/colorBackground</item>
+    </style>
+
+    <style name="ActionChip" parent="Widget.MaterialComponents.Chip.Action">
+
+        <item name="chipStartPadding">16dp</item>
+        <item name="chipEndPadding">16dp</item>
+        <item name="chipIconSize">18dp</item>
+
+        <item name="chipBackgroundColor">?android:attr/colorBackground</item>
+        <item name="chipStrokeWidth">@dimen/stroke_width</item>
+        <item name="chipStrokeColor">@color/low_emphasis_stroke</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="ActionChip.Primary">
+
+        <item name="chipStrokeColor">@color/primary</item>
+    </style>
+
+    <style name="MaterialButton" parent="Widget.MaterialComponents.Button">
+
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:textColor">@color/material_button_foreground</item>
+        <item name="iconTint">@color/material_button_foreground</item>
+        <item name="backgroundTint">@color/material_button_background</item>
+        <item name="iconSize">@dimen/button_icon_size</item>
+    </style>
+
+    <style name="CategoryButtonPopup" parent="Widget.MaterialComponents.PopupMenu">
+
+        <item name="android:popupBackground">@drawable/category_button_popup</item>
+    </style>
+
+    <style name="Title">
+
+        <item name="android:fontFamily">@font/heebo_bold</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textStyle">bold</item>
+
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="Title.Onboarding">
+
+        <item name="android:textSize">22sp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="ListItemTitle">
+
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="IconButton">
+
+        <item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
+        <item name="touchPadding">12dp</item>
+    </style>
+
+    <style name="LargeNameInputEditText" parent="Widget.AppCompat.EditText">
+
+        <item name="android:background">@null</item>
+
+        <item name="android:textSize">36sp</item>
+        <item name="android:textStyle">bold</item>
+
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+
+        <item name="android:importantForAutofill">no</item>
+    </style>
+
+    <style name="AddFab" parent="Widget.MaterialComponents.ExtendedFloatingActionButton.Icon">
+
+        <item name="shapeAppearanceOverlay">@style/ShapeSmallComponent</item>
+        <item name="icon">@drawable/outline_add_24</item>
+        <item name="android:textColor">@color/text_color_primary_dark</item>
+        <item name="iconTint">@color/text_color_primary_dark</item>
+        <item name="iconSize">@dimen/button_icon_size</item>
+
+        <item name="android:layout_marginBottom">@dimen/fab_margin_bottom</item>
+        <item name="android:layout_marginEnd">@dimen/layout_margin_horizontal</item>
+    </style>
+
+    <style name="QuantitySliderText">
+
         <item name="android:textSize">20sp</item>
-        <item name="android:textColor">@color/body</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
     </style>
 
-    <style name="NoMinorMinWidthDialog" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
-        <item name="android:windowMinWidthMinor">0%</item>
+    <style name="NavigationView" parent="Widget.MaterialComponents.NavigationView">
+
+        <item name="itemShapeFillColor">@color/navigation_item_background</item>
     </style>
 
-    <style name="AppBottomSheet" parent="Theme.Design.Light.BottomSheetDialog">
-        <item name="bottomSheetStyle">@style/AppBottomSheetStyle</item>
+    <style name="EmptyText">
+
+        <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="AppBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
-        <item name="android:background">@android:color/transparent</item>
+    <style name="OnboardingText">
+
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textAlignment">center</item>
     </style>
 
-    <style name="CategoryBottomSheet" parent="AppBottomSheet">
-        <item name="android:windowIsFloating">false</item>
-        <item name="android:windowSoftInputMode">adjustResize</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
+    <style name="Heading">
+
+        <item name="android:textColor">?attr/colorSecondary</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="PickerControlContainer">
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:orientation">horizontal</item>
-        <item name="android:layout_marginStart">@dimen/double_margin</item>
-        <item name="android:layout_marginEnd">@dimen/double_margin</item>
-        <item name="android:layout_marginTop">@dimen/margin</item>
+    <style name="CheckBox" parent="Widget.MaterialComponents.CompoundButton.CheckBox">
+
+        <item name="android:drawableStart">@android:color/transparent</item>
+        <item name="android:drawablePadding">6dp</item>
+    </style>
+
+    <style name="AboutRow">
+
+        <item name="android:background">?android:attr/selectableItemBackground</item>
         <item name="android:gravity">center_vertical</item>
+        <item name="android:minHeight">?android:attr/listPreferredItemHeight</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingHorizontal">@dimen/layout_margin_horizontal</item>
     </style>
-
-    <style name="PickerControlLabel">
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:textSize">@dimen/big_font</item>
-    </style>
-
-    <style name="PickerControlBar">
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_weight">1</item>
-        <item name="android:layout_marginStart">@dimen/margin</item>
-        <item name="android:layout_marginEnd">@dimen/margin</item>
-    </style>
-
-    <style name="PickerControlInput.Container" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-    </style>
-
-    <style name="PickerControlInput" parent="Widget.MaterialComponents.TextInputEditText.OutlinedBox">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:inputType">number</item>
-        <item name="android:minWidth">@dimen/picker_color_input_min_width</item>
-        <item name="android:padding">8dp</item>
-        <item name="android:gravity">center</item>
-    </style>
-
 </resources>

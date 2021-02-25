@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="uk.henrytwist.fullcart.view.ListItemFormatter" />
+
+        <variable
+            name="category"
+            type="uk.henrytwist.fullcart.models.Category" />
+
+        <variable
+            name="handler"
+            type="uk.henrytwist.fullcart.view.components.categories.CategoryButton.PopupAdapter.Handler" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:onClick="@{() -> handler.onCategoryClicked(category)}"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/button_padding_horizontal"
+        android:paddingVertical="@dimen/list_item_vertical_padding">
+
+        <uk.henrytwist.fullcart.view.components.categories.CategoryDotView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/dot"
+            bind:color="@{ListItemFormatter.INSTANCE.resolveCategoryColor(context, category)}" />
+
+        <TextView
+            android:id="@+id/category_button_row_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/horizontal_icon_margin"
+            android:layout_weight="1"
+            android:text="@{ListItemFormatter.INSTANCE.resolveCategoryName(context, category)}"
+            android:textAlignment="center"
+            android:textColor="?android:attr/textColorPrimary" />
+    </LinearLayout>
+</layout>

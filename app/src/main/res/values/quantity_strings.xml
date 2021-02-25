@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Display names -->
+    <string name="quantity_single_unit">-</string>
+    <string name="quantity_litres_unit">litres</string>
+    <string name="quantity_pints_unit">pints</string>
+    <string name="quantity_packs_unit">packs</string>
+    <string name="quantity_kilograms_unit">kg</string>
+    <string name="quantity_grams_unit">grams</string>
+    <string name="quantity_ml_unit">ml</string>
+
+    <!-- Templates -->
+    <string name="quantity_single">%d</string>
+    <string name="quantity_litres">%dL</string>
+    <plurals name="quantity_pints">
+
+        <item quantity="one">%d pint</item>
+        <item quantity="other">%d pints</item>
+    </plurals>
+    <plurals name="quantity_packs">
+
+        <item quantity="one">%d pack</item>
+        <item quantity="other">%d packs</item>
+    </plurals>
+    <string name="quantity_kilograms">%dkg</string>
+    <string name="quantity_grams">%dg</string>
+    <string name="quantity_ml">%dml</string>
+</resources>

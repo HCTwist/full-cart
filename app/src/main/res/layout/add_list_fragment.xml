@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="uk.henrytwist.fullcart.view.addlist.AddListViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <uk.henrytwist.buttons.AccessibleTouchImageButton
+            android:id="@+id/add_shopping_list_close"
+            style="@style/IconButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/layout_margin_horizontal"
+            android:layout_marginTop="@dimen/nav_button_layout_margin_top"
+            android:onClick="@{() -> viewModel.onBackClicked()}"
+            android:src="@drawable/outline_arrow_back_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/add_shopping_list_name"
+            style="@style/LargeNameInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:importantForAutofill="no"
+            android:layout_marginHorizontal="@dimen/layout_margin_horizontal"
+            android:layout_marginTop="@dimen/content_margin_top"
+            android:hint="@string/shopping_list_name_hint"
+            android:inputType="textCapWords|textMultiLine"
+            android:text="@={viewModel.name}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/add_shopping_list_close" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/add_list_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/layout_margin_horizontal"
+            android:layout_marginTop="@dimen/content_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/add_shopping_list_name"
+            app:selectionRequired="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/add_list_type_shopping"
+                style="@style/ChoiceChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/shopping_list_title" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/add_list_type_pantry"
+                style="@style/ChoiceChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pantry_title" />
+        </com.google.android.material.chip.ChipGroup>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/layout_margin_horizontal"
+            android:layout_marginBottom="@dimen/layout_margin_bottom"
+            android:enabled="@{viewModel.valid}"
+            android:onClick="@{() -> viewModel.onClickAdd()}"
+            android:text="@string/shopping_list_add"
+            app:icon="@drawable/outline_add_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/add_list_type"
+            app:layout_constraintVertical_bias="1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

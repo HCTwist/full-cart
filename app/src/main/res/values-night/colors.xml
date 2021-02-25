@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="body">#cfdadf</color>
-    <color name="body_secondary">#4e5659</color>
+    <!-- Brand -->
+    <color name="primary">#8CBEED</color>
+    <color name="primary_light">#338CBEED</color>
+    <color name="secondary">#658494</color>
 
-    <color name="navigation_header">#171e1f</color>
-
+    <!-- General -->
+    <color name="low_emphasis_stroke">#404040</color>
 </resources>

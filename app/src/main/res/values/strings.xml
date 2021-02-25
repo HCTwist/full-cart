@@ -1,89 +1,68 @@
 <resources>
     <string name="app_name">FullCart</string>
 
-    <!-- Section titles -->
-    <string name="title_list">Shopping List</string>
-    <string name="title_pantry">Pantry</string>
-    <string name="title_categories">Categories</string>
-    <string name="title_add_category">Add Category</string>
-    <string name="title_settings">Settings</string>
-    <string name="title_add_item">Add Item</string>
-    <string name="title_edit_item">Edit Item</string>
+    <!-- General -->
+    <string name="shopping_list_title">Shopping list</string>
+    <string name="pantry_title">Pantry</string>
+
+    <!-- No list -->
+    <string name="no_list_message">"Looks like you don't have any lists."</string>
 
     <!-- Categories -->
-    <string name="category_default_tag">(default)</string>
-    <string name="default_category_name">No category</string>
-    <string name="categories_empty">You currently do not have any categories, add one with the plus button above! If you do not want to use categories, you don\'t have to</string>
-    <string name="category_used">This category is being used</string>
-    <string name="category_color_cd">Category color</string>
+    <string name="no_category">No category</string>
+    <string name="categories_title">Categories</string>
+    <string name="category_name_hint">New category</string>
+    <string name="category_add">Add category</string>
+    <string name="category_default">Default</string>
+    <string name="add_category_title">Add category</string>
+    <string name="categories_empty">You have no categories at the moment</string>
 
-    <!-- Category editing -->
-    <string name="add_category_name_hint">Category name</string>
-    <string name="add_category_name_error">This category already exists</string>
-    <string name="add_category_color_label">Colour select</string>
-    <string name="category_editing">Editing \'%1$s\'</string>
-    <string name="custom_color_cd">Custom colour</string>
+    <!-- Add list -->
+    <string name="add_list_title">Add list</string>
+    <string name="shopping_list_name_hint">New list</string>
+    <string name="shopping_list_add">Add list</string>
 
-    <!-- Shopping list -->
-    <string name="shopping_empty">Your list is currently empty! Try adding something with the button below</string>
-    <string name="shopping_transfer_prompt_message">Item moved to pantry</string>
-    <string name="shopping_transfer_cd">Transfer item from shopping list to pantry</string>
-    <string name="shopping_remove_cd">Remove item from the shopping list</string>
-    <string name="shopping_basket_header">Items in the basket</string>
+    <!-- Edit item -->
+    <string name="item_name_hint">Name</string>
+    <string name="edit_item_use_by_hint">Use by date</string>
+    <string name="edit_item_use_by">Use by: %1$s</string>
+    <string name="edit_item_delete">Delete item</string>
+    <string name="edit_item_move_single">Move to %1$s</string>
+    <string name="edit_item_save_changes">Save changes</string>
 
-    <!-- Pantry -->
-    <string name="pantry_increment_cd">Increase the quantity of the item</string>
-    <string name="pantry_decrement_cd">Decrease the quantity of the item</string>
-    <string name="pantry_empty">Your pantry is currently empty! Try adding something by either using the button below or transferring an item from your list</string>
-    <string name="pantry_removed_prompt">Item removed</string>
-    <string name="large_quantity_placeholder">\u003e</string>
+    <!-- Edit shopping item -->
+    <string name="edit_shopping_item_move_pantry">Move to a pantry</string>
+    <string name="edit_shopping_item_move_list">Move to another list</string>
 
-    <!-- Item editing  -->
-    <string name="item_name_hint">Item name</string>
-    <string name="item_search_hint">Search</string>
-    <string name="item_search_quick_add_cd">Quick add item</string>
-    <string name="item_search_empty">Start typing to search for items!</string>
-    <string name="item_delete">Delete item</string>
-    <string name="item_notes_hint">Notes</string>
-    <string name="item_number_hint">Number</string>
-    <string name="item_use_by_date_title">Use by date:</string>
-    <string name="item_best_before_date_title">Best before date:</string>
-    <string name="item_no_by_date">Not set</string>
-    <string name="item_name_error">You must specify a name</string>
-    <string name="item_close_search_cd">Close the search</string>
-    <string name="item_search_no_category_symbol">~</string>
-    <string name="item_exit_confirmation">Do you want to discard your changes?</string>
-    <string name="item_exit_positive">Save</string>
-    <string name="item_exit_negative">Discard</string>
+    <!-- Edit pantry item -->
+    <string name="edit_pantry_item_move_pantry">Move to another pantry</string>
+    <string name="edit_pantry_item_add_list">Add to a list</string>
+    <string name="edit_pantry_item_add_list_single">Add to %1$s</string>
+    <string name="add_to_list_dialog_title">Add to</string>
 
-    <!-- Delete messages -->
-    <string name="delete_bundle_message">Delete all items in \"%1$s\"?</string>
-    <string name="delete_category_message">Delete category \"%1$s\"?</string>
+    <!-- Lists -->
+    <string name="item_title_quantity_suffix">" - %1$s"</string>
+    <string name="list_delete">Delete entire list</string>
+    <string name="list_add_item">Add Item</string>
 
-    <!-- Menu -->
-    <string name="menu_delete_checked">Delete all checked items</string>
-    <string name="menu_transfer_checked">Transfer all checked items to the pantry</string>
-    <string name="menu_show_notification">Pin notification to the status bar</string>
-    <string name="menu_feedback">If you have anything you would like to see in these menus, please let me know!</string>
+    <!-- Shopping lists -->
+    <string name="move_checked_to_pantry_single">Move all to %1$s</string>
+    <string name="move_checked_to_pantry">Move all to pantry</string>
+    <string name="move_to_dialog_title">Move to</string>
+    <string name="delete_all_checked">Delete all</string>
+    <string name="shopping_list_empty">Your list is empty at the moment</string>
 
-    <!-- Tutorial -->
-    <string name="tutorial_cd_shopping">Shopping list</string>
-    <string name="tutorial_cd_plus">and</string>
-    <string name="tutorial_cd_pantry">Pantry</string>
+    <!-- Pantries -->
+    <string name="pantry_empty">Your pantry is empty at the moment</string>
 
-    <!-- Color pickers -->
-    <string name="r">R</string>
-    <string name="g">G</string>
-    <string name="b">B</string>
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
 
-    <!-- Misc -->
-    <string name="discarded">Changes discarded</string>
-    <string name="undo">Undo</string>
-    <string name="field_blank">This field cannot be blank</string>
-    <string name="confirm">Confirm</string>
-    <string name="skip">Skip</string>
-    <string name="menu">Menu</string>
-    <string name="dismiss">Dismiss</string>
-    <string name="retry">Retry</string>
+    <!-- About -->
+    <string name="about_title">About</string>
 
+    <!-- Notification -->
+    <string name="notification_channel_use_by">Use by dates</string>
+    <string name="use_by_notification_title">To use soon</string>
+    <string name="use_by_notification_item">%1$s - %2$s</string>
 </resources>

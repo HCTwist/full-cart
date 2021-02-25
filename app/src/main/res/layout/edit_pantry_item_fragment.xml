@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="uk.henrytwist.fullcart.view.item.editpantryitem.EditPantryItemViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/pantry_item"
+                layout="@layout/pantry_item"
+                bind:viewModel="@{viewModel}" />
+
+            <HorizontalScrollView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/content_margin"
+                android:layout_marginBottom="@dimen/layout_margin_bottom"
+                android:clipToPadding="false"
+                android:overScrollMode="never"
+                android:paddingHorizontal="@dimen/layout_margin_horizontal"
+                android:scrollbars="none"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pantry_item"
+                app:layout_constraintVertical_bias="1">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    app:singleLine="true">
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/ActionChip.Primary"
+                        goneUnless="@{viewModel.hasChanges}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> viewModel.onConfirmClicked()}"
+                        android:text="@string/edit_item_save_changes"
+                        app:chipIcon="@drawable/outline_done_24" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/ActionChip"
+                        goneUnless="@{viewModel.shoppingListAddButtonDisplay.show}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> viewModel.onAddToListClicked()}"
+                        android:text="@{viewModel.shoppingListAddButtonDisplay.resolveText(context)}"
+                        app:chipIcon="@drawable/outline_list_alt_24" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/ActionChip"
+                        goneUnless="@{viewModel.pantryMoveButtonDisplay.show}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> viewModel.onMoveToPantryClicked()}"
+                        android:text="@{viewModel.pantryMoveButtonDisplay.resolveText(context)}"
+                        app:chipIcon="@drawable/outline_kitchen_24" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/ActionChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> viewModel.onDeleteClicked()}"
+                        android:text="@string/edit_item_delete"
+                        app:chipIcon="@drawable/outline_delete_forever_24" />
+                </com.google.android.material.chip.ChipGroup>
+            </HorizontalScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
