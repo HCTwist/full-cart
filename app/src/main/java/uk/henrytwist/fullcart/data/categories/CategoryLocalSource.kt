@@ -13,4 +13,8 @@ interface CategoryLocalSource {
     suspend fun getColor(id: Int): Int
 
     suspend fun get(id: Int): Category
+
+    suspend fun edit(category: Category)
+
+    suspend fun remove(id: Int)
 }

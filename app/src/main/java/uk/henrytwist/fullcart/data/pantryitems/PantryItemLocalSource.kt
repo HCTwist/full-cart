@@ -29,4 +29,6 @@ interface PantryItemLocalSource {
     suspend fun edit(item: PantryItemDetailsModel)
 
     suspend fun move(id: Int, listId: Int)
+
+    suspend fun removeCategory(categoryId: Int)
 }

@@ -4,10 +4,12 @@ import android.os.Bundle
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.liveData
-import uk.henrytwist.androidbasics.Trigger
+import uk.henrytwist.kotlinbasics.Trigger
 import uk.henrytwist.androidbasics.livedata.trigger
 import uk.henrytwist.androidbasics.navigation.NavigatorViewModel
+import uk.henrytwist.fullcart.R
 import uk.henrytwist.fullcart.data.OnboardingRepository
+import uk.henrytwist.fullcart.models.ListMeta
 import uk.henrytwist.fullcart.usecases.GetListMeta
 import uk.henrytwist.fullcart.view.IdBundle
 
@@ -17,6 +19,7 @@ abstract class ListViewModel(
 ) : NavigatorViewModel(), ListHeaderAdapter.Handler {
 
     protected var listId = -1
+    protected lateinit var listMeta: ListMeta
 
     lateinit var title: LiveData<String>
 
@@ -50,10 +53,11 @@ abstract class ListViewModel(
 
             if (meta == null) {
 
-                navigateBack()
+                navigate(R.id.action_listContainerFragment_self)
             } else {
 
-                emit(meta.name)
+                listMeta = meta
+                emit(listMeta.name)
             }
         }
 
@@ -72,5 +76,9 @@ abstract class ListViewModel(
     override fun onMenuClick() {
 
         _showMenu.trigger()
+    }
+
+    override fun onCleared() {
+        super.onCleared()
     }
 }

@@ -104,7 +104,7 @@
     <style name="Title">
 
         <item name="android:fontFamily">@font/heebo_bold</item>
-        <item name="android:textSize">30sp</item>
+        <item name="android:textSize">28sp</item>
         <item name="android:textStyle">bold</item>
 
         <item name="android:textColor">?android:attr/textColorPrimary</item>
@@ -162,6 +162,7 @@
 
     <style name="NavigationView" parent="Widget.MaterialComponents.NavigationView">
 
+        <item name="android:colorControlHighlight">@android:color/transparent</item>
         <item name="itemShapeFillColor">@color/navigation_item_background</item>
     </style>
 

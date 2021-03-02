@@ -1,5 +1,6 @@
 package uk.henrytwist.fullcart.view.item.editshoppingitem
 
+import android.graphics.Paint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -45,10 +46,18 @@ class EditShoppingItemFragment : ItemFragment() {
 
         viewModel.pantrySelectionDialogHelper.observeShowSelectionDialog(requireContext(), viewLifecycleOwner)
         viewModel.shoppingListSelectionDialogHelper.observeShowSelectionDialog(requireContext(), viewLifecycleOwner)
+
+        viewModel.checked.observe(viewLifecycleOwner) {
+
+            if (it) {
+
+                binding.item.editItemNameContainer.paintFlags = binding.item.editItemNameContainer.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
+            }
+        }
     }
 
-    override fun getEditItemBinding(): ItemBinding {
+    override fun getItemBinding(): ItemBinding {
 
-        return binding.pantryItem
+        return binding.item
     }
 }

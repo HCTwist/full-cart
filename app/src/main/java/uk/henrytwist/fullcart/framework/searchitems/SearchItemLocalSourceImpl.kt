@@ -6,17 +6,17 @@ import uk.henrytwist.fullcart.models.SearchItem
 import java.time.Instant
 import javax.inject.Inject
 
-class SearchItemLocalSourceImpl @Inject constructor(private val searchItemDao: SearchItemDao) : SearchItemLocalSource {
+class SearchItemLocalSourceImpl @Inject constructor(private val dao: SearchItemDao) : SearchItemLocalSource {
 
     override suspend fun addOrUpdate(item: SearchItem) {
 
         val categoryId = item.category?.id ?: -1
-        searchItemDao.insertOrUpdate(item.name, categoryId, Instant.now().epochSecond)
+        dao.insertOrUpdate(item.name, categoryId, Instant.now().epochSecond)
     }
 
     override suspend fun search(query: String): List<SearchItemModel> {
 
-        val results = searchItemDao.search("*$query*")
+        val results = dao.search("*$query*")
 
         return results.map {
 
@@ -27,10 +27,15 @@ class SearchItemLocalSourceImpl @Inject constructor(private val searchItemDao: S
 
     override suspend fun getMostRecent(limit: Int): List<SearchItemSummaryModel> {
 
-        return searchItemDao.getMostRecent(limit).map {
+        return dao.getMostRecent(limit).map {
 
             val category = if (it.category == -1) null else it.category
             SearchItemSummaryModel(it.name, category)
         }
+    }
+
+    override suspend fun removeWithCategory(categoryId: Int) {
+
+        dao.deleteWithCategory(categoryId)
     }
 }

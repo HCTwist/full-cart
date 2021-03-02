@@ -40,4 +40,14 @@ class CategoryLocalSourceImpl @Inject constructor(private val dao: CategoryDao) 
             Category(it.id, it.name, it.color, it.isDefault)
         }
     }
+
+    override suspend fun edit(category: Category) {
+
+        dao.update(category.id, category.name, category.color, category.isDefault)
+    }
+
+    override suspend fun remove(id: Int) {
+
+        dao.delete(id)
+    }
 }

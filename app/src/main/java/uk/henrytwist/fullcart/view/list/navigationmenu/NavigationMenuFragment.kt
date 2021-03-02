@@ -5,7 +5,7 @@ import android.view.View
 import androidx.fragment.app.viewModels
 import uk.henrytwist.fullcart.R
 import dagger.hilt.android.AndroidEntryPoint
-import uk.henrytwist.fullcart.view.MenuFragment
+import uk.henrytwist.fullcart.view.components.MenuFragment
 
 @AndroidEntryPoint
 class NavigationMenuFragment : MenuFragment(R.menu.list_menu) {

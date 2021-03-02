@@ -93,7 +93,24 @@
                                 <LayoutPositions />
                               </value>
                             </entry>
+                            <entry key="action_categoriesFragment_to_editCategoryFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                           </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="editCategoryFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="1192" />
+                            <option name="y" value="403" />
+                          </Point>
                         </option>
                       </LayoutPositions>
                     </value>
@@ -183,8 +200,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-28" />
-                            <option name="y" value="-275" />
+                            <option name="x" value="-112" />
+                            <option name="y" value="-377" />
                           </Point>
                         </option>
                         <option name="myPositions">
@@ -207,6 +224,15 @@
                             <option name="x" value="688" />
                             <option name="y" value="-333" />
                           </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_settingsFragment_to_aboutFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
                         </option>
                       </LayoutPositions>
                     </value>

@@ -2,7 +2,7 @@ package uk.henrytwist.fullcart.view.pantryitem
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import uk.henrytwist.androidbasics.Trigger
+import uk.henrytwist.kotlinbasics.Trigger
 import uk.henrytwist.androidbasics.livedata.trigger
 import uk.henrytwist.fullcart.models.UseByDate
 import uk.henrytwist.fullcart.usecases.GetAllCategories

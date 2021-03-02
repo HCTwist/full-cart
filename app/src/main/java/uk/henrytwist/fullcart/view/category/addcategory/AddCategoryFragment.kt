@@ -1,22 +1,26 @@
-package uk.henrytwist.fullcart.view.addcategory
+package uk.henrytwist.fullcart.view.category.addcategory
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
 import uk.henrytwist.fullcart.databinding.AddCategoryFragmentBinding
+import uk.henrytwist.fullcart.databinding.CategoryBinding
+import uk.henrytwist.fullcart.view.category.CategoryFragment
+import uk.henrytwist.fullcart.view.category.CategoryViewModel
 import uk.henrytwist.fullcart.view.showSoftKeyboard
-import uk.henrytwist.selectslider.SelectSliderView
 
 @AndroidEntryPoint
-class AddCategoryFragment : Fragment() {
+class AddCategoryFragment : CategoryFragment() {
 
     private lateinit var binding: AddCategoryFragmentBinding
 
     private val viewModel by viewModels<AddCategoryViewModel>()
+
+    override val categoryViewModel: CategoryViewModel
+        get() = viewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
 
@@ -28,25 +32,13 @@ class AddCategoryFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        viewModel.observeNavigation(this)
+        super.onViewCreated(view, savedInstanceState)
 
-        binding.addCategoryName.showSoftKeyboard()
+        binding.category.addCategoryName.showSoftKeyboard()
+    }
 
-        val colorAdapter = CategoryColorAdapter()
+    override fun getCategoryBinding(): CategoryBinding {
 
-        binding.addCategoryColors.run {
-
-            setHasFixedSize(true)
-            adapter = colorAdapter
-            onSelectListener = SelectSliderView.OnSelectListener {
-
-                viewModel.onColorSelected(it)
-            }
-        }
-
-        binding.addCategoryDefault.setOnClickListener {
-
-            viewModel.onDefaultCheckChanged(binding.addCategoryDefault.isChecked)
-        }
+        return binding.category
     }
 }

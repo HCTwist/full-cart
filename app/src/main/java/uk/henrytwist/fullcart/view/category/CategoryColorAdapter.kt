@@ -1,13 +1,13 @@
-package uk.henrytwist.fullcart.view.addcategory
+package uk.henrytwist.fullcart.view.category
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import uk.henrytwist.fullcart.databinding.CategoryColorRowBinding
 import uk.henrytwist.fullcart.models.CategoryColor
-import uk.henrytwist.selectslider.SelectSliderAdapter
+import uk.henrytwist.selectslider.SelectSliderView
 
-class CategoryColorAdapter : SelectSliderAdapter<CategoryColorAdapter.Holder>() {
+class CategoryColorAdapter : SelectSliderView.Adapter<CategoryColorAdapter.Holder>() {
 
     private val colors = CategoryColor.values()
 

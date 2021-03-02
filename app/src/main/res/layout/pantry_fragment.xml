@@ -23,6 +23,7 @@
 
         <ImageView
             android:id="@+id/pantry_empty_image"
+            goneIfLandscapeOr="@{!viewModel.empty}"
             goneUnless="@{viewModel.empty}"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

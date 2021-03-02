@@ -26,4 +26,14 @@ class CategoryRepository @Inject constructor(private val localSource: CategoryLo
 
         return localSource.get(id)
     }
+
+    suspend fun edit(category: Category) {
+
+        localSource.edit(category)
+    }
+
+    suspend fun remove(id: Int) {
+
+        localSource.remove(id)
+    }
 }

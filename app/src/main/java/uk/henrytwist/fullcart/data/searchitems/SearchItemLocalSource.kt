@@ -10,4 +10,6 @@ interface SearchItemLocalSource {
     suspend fun search(query: String): List<SearchItemModel>
 
     suspend fun getMostRecent(limit: Int): List<SearchItemSummaryModel>
+
+    suspend fun removeWithCategory(categoryId: Int)
 }

@@ -17,7 +17,7 @@ abstract class ItemFragment : Fragment() {
 
         itemViewModel.observeNavigation(this)
 
-        val binding = getEditItemBinding()
+        val binding = getItemBinding()
 
         binding.editItemNameContainer.addTextChangedListener {
 
@@ -67,5 +67,5 @@ abstract class ItemFragment : Fragment() {
         }
     }
 
-    abstract fun getEditItemBinding(): ItemBinding
+    abstract fun getItemBinding(): ItemBinding
 }

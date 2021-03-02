@@ -26,6 +26,7 @@ class CategoriesViewModel @Inject constructor(
 
     override fun onCategoryClicked(category: Category) {
 
+        navigate(CategoriesFragmentDirections.actionCategoriesFragmentToEditCategoryFragment(category.id))
     }
 
     override fun onClickBack() {

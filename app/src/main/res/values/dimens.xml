@@ -23,6 +23,8 @@
 
     <dimen name="illustration_layout_margin">48dp</dimen>
 
+    <dimen name="icon_size">24dp</dimen>
+
     <!-- Visuals -->
     <dimen name="corner_radius">12dp</dimen>
     <dimen name="stroke_width">1dp</dimen>

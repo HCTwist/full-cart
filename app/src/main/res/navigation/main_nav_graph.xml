@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav_graph"
     app:startDestination="@id/aboutFragment">
 
@@ -24,10 +25,17 @@
             app:exitAnim="@anim/transition_fade_exit"
             app:popEnterAnim="@anim/transition_fade_pop_enter"
             app:popExitAnim="@anim/transition_rise_up_pop_exit" />
+        <action
+            android:id="@+id/action_categoriesFragment_to_editCategoryFragment"
+            app:destination="@id/editCategoryFragment"
+            app:enterAnim="@anim/transition_rise_up_enter"
+            app:exitAnim="@anim/transition_fade_exit"
+            app:popEnterAnim="@anim/transition_fade_pop_enter"
+            app:popExitAnim="@anim/transition_rise_up_pop_exit" />
     </fragment>
     <fragment
         android:id="@+id/addCategoryFragment"
-        android:name="uk.henrytwist.fullcart.view.addcategory.AddCategoryFragment"
+        android:name="uk.henrytwist.fullcart.view.category.addcategory.AddCategoryFragment"
         android:label="AddCategoryFragment" />
     <fragment
         android:id="@+id/addPantryItemFragment"
@@ -154,4 +162,12 @@
         android:id="@+id/aboutFragment"
         android:name="uk.henrytwist.fullcart.view.about.AboutFragment"
         android:label="AboutFragment" />
+    <fragment
+        android:id="@+id/editCategoryFragment"
+        android:name="uk.henrytwist.fullcart.view.category.editcategory.EditCategoryFragment"
+        android:label="EditCategoryFragment" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
 </navigation>

@@ -33,4 +33,10 @@ interface CategoryDao {
         }
         insert(categoryEntity)
     }
+
+    @Query("UPDATE CategoryEntity SET name = :name, color = :color, isDefault = :isDefault WHERE id = :id")
+    suspend fun update(id: Int, name: String, color: Int, isDefault: Boolean)
+
+    @Query("DELETE FROM CategoryEntity WHERE id = :id")
+    suspend fun delete(id: Int)
 }

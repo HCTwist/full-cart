@@ -1,4 +1,4 @@
-package uk.henrytwist.fullcart.view.addcategory
+package uk.henrytwist.fullcart.view.category
 
 import android.content.Context
 import uk.henrytwist.fullcart.R

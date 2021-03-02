@@ -18,7 +18,7 @@ abstract class SearchableItemFragment : ItemFragment() {
 
             override fun onSearchItemClicked(item: SearchItem) {
 
-                val nameView = getEditItemBinding().editItemNameContainer
+                val nameView = getItemBinding().editItemNameContainer
                 nameView.hideSoftKeyboard()
                 nameView.clearFocus()
                 itemViewModel.onSearchItemClicked(item)

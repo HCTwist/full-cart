@@ -98,7 +98,7 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
 
             getString(R.string.setting_rating_key) -> {
 
-                RatingUtil.startRatingFlow(requireActivity())
+                RatingUtil.openPlayStoreListing(requireContext())
             }
 
             else -> return false

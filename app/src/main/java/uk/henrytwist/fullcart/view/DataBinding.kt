@@ -1,36 +1,13 @@
 package uk.henrytwist.fullcart.view
 
+import android.content.res.Configuration
+import android.graphics.Paint
 import android.view.View
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.databinding.BindingAdapter
-import androidx.databinding.OnRebindCallback
-import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import uk.henrytwist.androidbasics.recyclerview.MarginItemDecoration
-
-fun <B : ViewDataBinding> B.interceptNextRebind(bind: B.() -> Unit) {
-
-    addOnRebindCallback(object : OnRebindCallback<B>() {
-
-        override fun onPreBind(binding: B): Boolean {
-
-            bind(binding)
-            removeOnRebindCallback(this)
-            return false
-        }
-    })
-}
-
-@BindingAdapter("invisibleUnless")
-fun invisibleUnless(view: View, boolean: Boolean) {
-
-    view.visibility = if (boolean) View.VISIBLE else View.INVISIBLE
-}
-
-@BindingAdapter("goneUnless")
-fun goneUnless(view: View, boolean: Boolean) {
-
-    view.visibility = if (boolean) View.VISIBLE else View.GONE
-}
 
 // TODO Work in progress
 @BindingAdapter("fadeGoneUnless")
@@ -67,3 +44,41 @@ fun setItemMargins(recyclerView: RecyclerView, margin: Float) {
 
     recyclerView.addItemDecoration(MarginItemDecoration(margin))
 }
+
+@BindingAdapter("strike")
+fun setStrike(textView: TextView, boolean: Boolean) {
+
+    if (boolean) {
+
+        textView.paintFlags = textView.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
+    } else {
+
+        textView.paintFlags = textView.paintFlags and Paint.STRIKE_THRU_TEXT_FLAG.inv()
+    }
+}
+
+@BindingAdapter("goneIfLandscapeOr")
+fun goneIfLandscapeOr(view: View, boolean: Boolean) {
+
+    if (view.isLandscape() || boolean) {
+
+        view.visibility = View.GONE
+    } else {
+
+        view.visibility = View.VISIBLE
+    }
+}
+
+@BindingAdapter("deviceMatchingOrientation")
+fun deviceMatchingOrientation(linearLayout: LinearLayout, boolean: Boolean) {
+
+    linearLayout.orientation = if (linearLayout.isLandscape()) {
+
+        LinearLayout.HORIZONTAL
+    } else {
+
+        LinearLayout.VERTICAL
+    }
+}
+
+private fun View.isLandscape() = resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE

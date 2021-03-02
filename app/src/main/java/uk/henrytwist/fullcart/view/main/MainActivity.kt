@@ -1,6 +1,7 @@
 package uk.henrytwist.fullcart.view.main
 
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -89,6 +90,14 @@ class MainActivity : AppCompatActivity(R.layout.activity_main), NavController.On
     override fun onDestinationChanged(controller: NavController, destination: NavDestination, arguments: Bundle?) {
 
         currentFocus?.hideSoftKeyboard()
+
+        requestedOrientation = if (destination.id == R.id.onboardingFragment) {
+
+            ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+        } else {
+
+            ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
+        }
     }
 
     private fun findNavController() = findNavController(R.id.nav_host_fragment)

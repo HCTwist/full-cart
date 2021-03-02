@@ -1,10 +1,11 @@
-package uk.henrytwist.fullcart.view
+package uk.henrytwist.fullcart.view.components
 
 import android.os.Bundle
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ViewSwitcher
+import android.view.ViewParent
 import androidx.annotation.MenuRes
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.navigation.NavigationView
@@ -24,7 +25,7 @@ abstract class MenuFragment(@MenuRes private val menuRes: Int?) : BottomSheetDia
 
         if (menuRes != null) navigationView.inflateMenu(menuRes)
 
-        view.findViewById<NavigationView>(R.id.menu_navigation_view).setNavigationItemSelectedListener {
+        navigationView.setNavigationItemSelectedListener {
 
             onNavigationItemSelected(it.itemId)
             dismiss()

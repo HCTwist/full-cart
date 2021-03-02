@@ -17,6 +17,9 @@ interface SearchItemDao {
     @Query("SELECT name, category FROM SearchItemEntity ORDER BY lastUpdated DESC LIMIT :limit")
     suspend fun getMostRecent(limit: Int): List<SearchItemSummaryModel>
 
+    @Query("DELETE FROM SearchItemEntity WHERE category = :categoryId")
+    suspend fun deleteWithCategory(categoryId: Int)
+
     @Transaction
     suspend fun insertOrUpdate(name: String, category: Int, time: Long) {
 

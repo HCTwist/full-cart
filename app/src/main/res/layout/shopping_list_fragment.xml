@@ -23,7 +23,7 @@
 
         <ImageView
             android:id="@+id/shopping_list_empty_image"
-            goneUnless="@{viewModel.empty}"
+            goneIfLandscapeOr="@{!viewModel.empty}"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"

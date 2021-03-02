@@ -100,6 +100,11 @@ class PantryItemLocalSourceImpl @Inject constructor(private val dao: PantryItemD
         dao.move(id, listId)
     }
 
+    override suspend fun removeCategory(categoryId: Int) {
+
+        dao.removeCategory(categoryId)
+    }
+
     private fun useByDate(useByDate: Long?) = if (useByDate != null) UseByDate.fromEpochDay(useByDate) else null
 
     private fun quantity(quantityNumber: Int, quantityUnit: Int) = Quantity(quantityNumber, Quantity.Unit.values()[quantityUnit])

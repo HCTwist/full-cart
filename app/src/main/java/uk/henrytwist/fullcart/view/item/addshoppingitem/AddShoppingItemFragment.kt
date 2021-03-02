@@ -46,7 +46,7 @@ class AddShoppingItemFragment : SearchableItemFragment() {
         binding.item.editItemNameContainer.showSoftKeyboard()
     }
 
-    override fun getEditItemBinding(): ItemBinding {
+    override fun getItemBinding(): ItemBinding {
 
         return binding.item
     }

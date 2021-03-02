@@ -5,7 +5,7 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import uk.henrytwist.androidbasics.Trigger
+import uk.henrytwist.kotlinbasics.Trigger
 import uk.henrytwist.androidbasics.livedata.trigger
 import uk.henrytwist.fullcart.models.ListMetaSummary
 

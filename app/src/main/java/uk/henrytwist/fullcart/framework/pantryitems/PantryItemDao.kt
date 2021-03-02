@@ -43,4 +43,7 @@ interface PantryItemDao {
 
     @Query("UPDATE PantryItemEntity SET listId = :listId WHERE id = :id")
     suspend fun move(id: Int, listId: Int)
+
+    @Query("UPDATE PantryItemEntity SET category = NULL WHERE category = :categoryId")
+    suspend fun removeCategory(categoryId: Int)
 }

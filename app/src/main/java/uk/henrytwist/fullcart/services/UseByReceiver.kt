@@ -69,7 +69,7 @@ class UseByReceiver : BroadcastReceiver() {
 
         data.items.forEach {
 
-            val useByFormatted = ListItemFormatter.getUseByDateSummary(context, it.useByDate)!!
+            val useByFormatted = ListItemFormatter.getUseByDateSummary(context.resources, it.useByDate)!!
             style.addLine(context.getString(R.string.use_by_notification_item, it.name, useByFormatted))
         }
 

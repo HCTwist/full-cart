@@ -2,7 +2,7 @@ package uk.henrytwist.fullcart.view.list.pantry
 
 import androidx.fragment.app.viewModels
 import uk.henrytwist.fullcart.R
-import uk.henrytwist.fullcart.view.MenuFragment
+import uk.henrytwist.fullcart.view.components.MenuFragment
 
 class PantryMenuFragment : MenuFragment(R.menu.pantry_menu) {
 
@@ -13,6 +13,7 @@ class PantryMenuFragment : MenuFragment(R.menu.pantry_menu) {
         when (id) {
 
             R.id.pantry_delete -> viewModel.onClickDeleteList()
+            R.id.pantry_share -> viewModel.onClickShare()
         }
     }
 }

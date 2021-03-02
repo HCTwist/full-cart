@@ -1,5 +1,6 @@
 package uk.henrytwist.fullcart.data.pantryitems
 
+import androidx.cardview.widget.CardView
 import kotlinx.coroutines.flow.Flow
 import uk.henrytwist.fullcart.models.NewPantryItem
 import uk.henrytwist.fullcart.models.UseByDate
@@ -65,5 +66,10 @@ class PantryItemRepository @Inject constructor(private val localSource: PantryIt
     suspend fun move(id: Int, listId: Int) {
 
         localSource.move(id, listId)
+    }
+
+    suspend fun removeCategory(categoryId: Int) {
+
+        localSource.removeCategory(categoryId)
     }
 }

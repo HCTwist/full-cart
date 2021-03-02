@@ -44,6 +44,7 @@
     <string name="item_title_quantity_suffix">" - %1$s"</string>
     <string name="list_delete">Delete entire list</string>
     <string name="list_add_item">Add Item</string>
+    <string name="list_share">Share list</string>
 
     <!-- Shopping lists -->
     <string name="move_checked_to_pantry_single">Move all to %1$s</string>

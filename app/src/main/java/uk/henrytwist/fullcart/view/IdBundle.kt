@@ -1,6 +1,7 @@
 package uk.henrytwist.fullcart.view
 
 import android.os.Bundle
+import androidx.appcompat.widget.DialogTitle
 
 object IdBundle {
 

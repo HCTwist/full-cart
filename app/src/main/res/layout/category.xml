@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="uk.henrytwist.fullcart.view.category.CategoryFormatter" />
+
+        <variable
+            name="viewModel"
+            type="uk.henrytwist.fullcart.view.category.CategoryViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <uk.henrytwist.buttons.AccessibleTouchImageButton
+            android:id="@+id/add_category_back"
+            style="@style/IconButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/layout_margin_horizontal"
+            android:layout_marginTop="@dimen/nav_button_layout_margin_top"
+            android:onClick="@{() -> viewModel.navigateBack()}"
+            android:src="@drawable/outline_arrow_back_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/add_category_name"
+            style="@style/LargeNameInputEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/layout_margin_horizontal"
+            android:layout_marginTop="@dimen/content_margin_top"
+            android:hint="@string/category_name_hint"
+            android:importantForAutofill="no"
+            android:inputType="textCapWords|textMultiLine"
+            android:text="@={viewModel.name}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/add_category_back" />
+
+        <uk.henrytwist.selectslider.SelectSliderView
+            android:id="@+id/add_category_colors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/content_margin"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:paddingHorizontal="@dimen/layout_margin_horizontal"
+            app:layout_constraintTop_toBottomOf="@id/add_category_name"
+            bind:itemGap="@{@dimen/color_swatch_margin}" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/add_category_default"
+            style="@style/ChoiceChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sub_content_margin"
+            android:layout_marginEnd="@dimen/layout_margin_horizontal"
+            android:text="@string/category_default"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/add_category_colors"
+            android:checked="@={viewModel.isDefault}" />
+
+        <TextView
+            android:id="@+id/add_category_color_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/layout_margin_horizontal"
+            android:text="@{CategoryFormatter.INSTANCE.resolveColorName(context, viewModel.selectedColor)}"
+            android:textColor="@{viewModel.selectedColor.colorHex}"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/add_category_default"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/add_category_default" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

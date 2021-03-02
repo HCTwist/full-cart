@@ -3,6 +3,8 @@
 
     <data>
 
+        <import type="uk.henrytwist.fullcart.view.list.ListHeaderHelper" />
+
         <variable
             name="title"
             type="String" />
@@ -24,18 +26,32 @@
         android:paddingBottom="@dimen/content_margin">
 
         <TextView
-            android:id="@+id/list_header_title"
+            android:id="@+id/list_header_title_dummy"
             style="@style/Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/layout_margin_horizontal"
             android:layout_marginTop="@dimen/layout_margin_top"
-            android:drawablePadding="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/list_header_title"
+            style="@style/Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/horizontal_icon_margin"
+            android:ellipsize="end"
+            android:lines="1"
             android:onClick="@{() -> handler.onTitleClick()}"
             android:text="@{title}"
             app:drawableEndCompat="@drawable/outline_arrow_drop_down_24"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constrainedWidth="true"
+            android:drawablePadding="16dp"
+            app:layout_constraintEnd_toStartOf="@id/list_header_menu"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@id/list_header_title_dummy"
+            app:layout_constraintTop_toTopOf="@id/list_header_title_dummy" />
 
         <uk.henrytwist.fullcart.view.list.TouchHighlightView
             goneUnless="@{showTouchPrompt}"
@@ -47,14 +63,15 @@
             app:layout_constraintTop_toTopOf="@id/list_header_title" />
 
         <uk.henrytwist.buttons.AccessibleTouchImageButton
+            android:id="@+id/list_header_menu"
             style="@style/IconButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/layout_margin_horizontal"
             android:onClick="@{() -> handler.onMenuClick()}"
             android:src="@drawable/outline_more_vert_24"
-            app:layout_constraintBottom_toBottomOf="@id/list_header_title"
+            app:layout_constraintBottom_toBottomOf="@id/list_header_title_dummy"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/list_header_title" />
+            app:layout_constraintTop_toTopOf="@id/list_header_title_dummy" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

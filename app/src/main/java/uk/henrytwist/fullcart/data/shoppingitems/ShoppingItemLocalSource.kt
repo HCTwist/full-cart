@@ -26,4 +26,6 @@ interface ShoppingItemLocalSource {
     suspend fun edit(model: ShoppingItemDetailsModel)
 
     suspend fun moveToList(model: ShoppingItemSummaryModel, newListId: Int)
+
+    suspend fun removeCategory(categoryId: Int)
 }

@@ -8,7 +8,7 @@
             type="uk.henrytwist.fullcart.models.CategoryColor" />
     </data>
 
-    <uk.henrytwist.fullcart.view.addcategory.CategoryColorView xmlns:android="http://schemas.android.com/apk/res/android"
+    <uk.henrytwist.fullcart.view.category.CategoryColorView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/category_color_view"
         android:layout_width="@dimen/color_swatch_size"
         android:layout_height="@dimen/color_swatch_size"

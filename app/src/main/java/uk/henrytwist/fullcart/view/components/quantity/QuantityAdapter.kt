@@ -6,9 +6,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import uk.henrytwist.fullcart.R
-import uk.henrytwist.selectslider.SelectSliderAdapter
+import uk.henrytwist.selectslider.SelectSliderView
 
-abstract class QuantityAdapter : SelectSliderAdapter<QuantityAdapter.Holder>() {
+abstract class QuantityAdapter : SelectSliderView.Adapter<QuantityAdapter.Holder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
 

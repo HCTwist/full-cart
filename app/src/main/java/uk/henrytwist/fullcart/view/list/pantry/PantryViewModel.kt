@@ -1,5 +1,6 @@
 package uk.henrytwist.fullcart.view.list.pantry
 
+import android.content.res.Resources
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
@@ -7,10 +8,13 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
+import uk.henrytwist.androidbasics.navigation.NavigationCommand
 import uk.henrytwist.fullcart.R
 import uk.henrytwist.fullcart.data.OnboardingRepository
 import uk.henrytwist.fullcart.models.PantryItemSummary
 import uk.henrytwist.fullcart.usecases.*
+import uk.henrytwist.fullcart.util.ShareUtil
+import uk.henrytwist.fullcart.view.ListItemFormatter
 import uk.henrytwist.fullcart.view.list.ListContainerFragmentDirections
 import uk.henrytwist.fullcart.view.list.ListViewModel
 import javax.inject.Inject
@@ -19,6 +23,7 @@ import javax.inject.Inject
 class PantryViewModel @Inject constructor(
         onboardingRepository: OnboardingRepository,
         getListMeta: GetListMeta,
+        private val resources: Resources,
         private val setCurrentList: SetCurrentList,
         private val getPantryItemSummaries: GetPantryItemSummaries,
         private val decrementPantryItem: DecrementPantryItem,
@@ -56,6 +61,12 @@ class PantryViewModel @Inject constructor(
             deletePantry(listId)
             navigate(R.id.action_listContainerFragment_self)
         }
+    }
+
+    fun onClickShare() {
+
+        val shareString = ListItemFormatter.getPantryItemShareText(resources, listMeta, items.value!!)
+        navigate(NavigationCommand.StartActivity(ShareUtil.buildShareIntent(shareString)))
     }
 
     override fun onPantryItemClicked(item: PantryItemSummary) {

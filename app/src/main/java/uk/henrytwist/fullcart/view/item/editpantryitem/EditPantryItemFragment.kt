@@ -50,7 +50,7 @@ class EditPantryItemFragment : ItemFragment() {
         UseByDatePickerHelper.setup(this, viewModel)
     }
 
-    override fun getEditItemBinding(): ItemBinding {
+    override fun getItemBinding(): ItemBinding {
 
         return binding.pantryItem.item
     }

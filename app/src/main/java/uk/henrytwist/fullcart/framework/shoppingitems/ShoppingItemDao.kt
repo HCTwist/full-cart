@@ -39,4 +39,7 @@ interface ShoppingItemDao {
 
     @Query("UPDATE ShoppingItemEntity SET listId = :listId WHERE id = :id")
     suspend fun updateList(id: Int, listId: Int)
+
+    @Query("UPDATE ShoppingItemEntity SET category = NULL WHERE category = :categoryId")
+    suspend fun removeCategory(categoryId: Int)
 }

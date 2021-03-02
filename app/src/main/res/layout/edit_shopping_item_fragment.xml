@@ -20,7 +20,7 @@
             android:layout_height="wrap_content">
 
             <include
-                android:id="@+id/pantry_item"
+                android:id="@+id/item"
                 layout="@layout/item"
                 bind:viewModel="@{viewModel}" />
 
@@ -36,7 +36,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/pantry_item"
+                app:layout_constraintTop_toBottomOf="@id/item"
                 app:layout_constraintVertical_bias="1">
 
                 <com.google.android.material.chip.ChipGroup

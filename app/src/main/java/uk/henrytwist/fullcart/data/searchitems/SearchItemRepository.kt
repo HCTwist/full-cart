@@ -20,4 +20,9 @@ class SearchItemRepository @Inject constructor(private val localSource: SearchIt
 
         return localSource.getMostRecent(n)
     }
+
+    suspend fun removeWithCategory(categoryId: Int) {
+
+        localSource.removeWithCategory(categoryId)
+    }
 }

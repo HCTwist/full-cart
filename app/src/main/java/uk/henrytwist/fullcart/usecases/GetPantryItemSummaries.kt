@@ -2,7 +2,7 @@ package uk.henrytwist.fullcart.usecases
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
-import uk.henrytwist.androidbasics.sortedWithFieldComparator
+import uk.henrytwist.kotlinbasics.sortedWithFieldComparator
 import uk.henrytwist.fullcart.data.categories.CategoryRepository
 import uk.henrytwist.fullcart.data.pantryitems.PantryItemRepository
 import uk.henrytwist.fullcart.data.settings.SettingsRepository

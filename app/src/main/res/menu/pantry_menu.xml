@@ -5,4 +5,9 @@
         android:id="@+id/pantry_delete"
         android:icon="@drawable/outline_delete_forever_24"
         android:title="@string/list_delete" />
+
+    <item
+        android:id="@+id/pantry_share"
+        android:icon="@drawable/outline_share_24"
+        android:title="@string/list_share" />
 </menu>

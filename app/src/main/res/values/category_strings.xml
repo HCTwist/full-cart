@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="category_color_fruit">Peach</string>
-    <string name="category_color_vegetables">Avocado</string>
+    <string name="category_color_fruit">Apple</string>
+    <string name="category_color_vegetables">Watercress</string>
     <string name="category_color_fish">Ocean</string>
     <string name="category_color_meat">Oxymyoglobin</string>
     <string name="category_color_bakery">Panini</string>
-    <string name="category_color_drinks">TODO</string>
-    <string name="category_color_treats">TODO</string>
-    <string name="category_color_household">TODO</string>
+    <string name="category_color_drinks">Aluminium</string>
+    <string name="category_color_treats">Marshmallow</string>
+    <string name="category_color_household">Sponge</string>
     <string name="category_color_freezer">Ice</string>
-    <string name="category_color_personal_care">TODO</string>
+    <string name="category_color_personal_care">Cherry blossom</string>
     <string name="category_color_herbs_spices">Turmeric</string>
-    <string name="category_color_baby">TODO</string>
-    <string name="category_color_dairy">TODO</string>
+    <string name="category_color_baby">Cotton wool</string>
+    <string name="category_color_dairy">Oat</string>
 
     <string name="category_name_fruit">Fruit</string>
     <string name="category_name_vegetables">Vegetables</string>

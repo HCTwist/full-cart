@@ -95,6 +95,11 @@ class ShoppingItemLocalSourceImpl @Inject constructor(private val dao: ShoppingI
         dao.updateList(model.id, newListId)
     }
 
+    override suspend fun removeCategory(categoryId: Int) {
+
+        dao.removeCategory(categoryId)
+    }
+
     private fun ShoppingItemSummaryEntity.toModel(): ShoppingItemSummaryModel {
 
         val quantity = Quantity(quantityNumber, Quantity.Unit.values()[quantityUnit])

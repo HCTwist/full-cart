@@ -3,7 +3,7 @@ package uk.henrytwist.fullcart.view.list.shoppinglist
 import androidx.fragment.app.viewModels
 import uk.henrytwist.fullcart.R
 import dagger.hilt.android.AndroidEntryPoint
-import uk.henrytwist.fullcart.view.MenuFragment
+import uk.henrytwist.fullcart.view.components.MenuFragment
 
 @AndroidEntryPoint
 class ShoppingListMenuFragment : MenuFragment(R.menu.shopping_list_menu) {
@@ -15,6 +15,7 @@ class ShoppingListMenuFragment : MenuFragment(R.menu.shopping_list_menu) {
         when (id) {
 
             R.id.shopping_list_delete -> viewModel.onClickDeleteList()
+            R.id.shopping_list_share -> viewModel.onShareClicked()
         }
     }
 }

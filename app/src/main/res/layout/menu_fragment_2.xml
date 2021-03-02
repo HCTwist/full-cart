@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<uk.henrytwist.androidbasics.navigationmenuview.NavigationMenuView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipToPadding="false"
+    android:paddingHorizontal="@dimen/layout_margin_horizontal"
+    android:paddingVertical="@dimen/menu_layout_margin_vertical" />

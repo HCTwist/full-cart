@@ -1,15 +1,22 @@
 package uk.henrytwist.fullcart.view.list.shoppinglist
 
-import androidx.lifecycle.*
+import android.content.res.Resources
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MediatorLiveData
+import androidx.lifecycle.asLiveData
+import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.cancellable
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
+import uk.henrytwist.androidbasics.navigation.NavigationCommand
 import uk.henrytwist.fullcart.R
 import uk.henrytwist.fullcart.data.OnboardingRepository
 import uk.henrytwist.fullcart.models.ShoppingItemSummary
 import uk.henrytwist.fullcart.usecases.*
+import uk.henrytwist.fullcart.util.ShareUtil
+import uk.henrytwist.fullcart.view.ListItemFormatter
 import uk.henrytwist.fullcart.view.ListSelectionDialogHelper
 import uk.henrytwist.fullcart.view.list.ListContainerFragmentDirections
 import uk.henrytwist.fullcart.view.list.ListViewModel
@@ -19,6 +26,7 @@ import javax.inject.Inject
 class ShoppingListViewModel @Inject constructor(
         onboardingRepository: OnboardingRepository,
         getListMeta: GetListMeta,
+        private val resources: Resources,
         private val setCurrentList: SetCurrentList,
         private val getShoppingItemSummaries: GetShoppingItemSummaries,
         private val toggleShoppingItemCheck: ToggleShoppingItemCheck,
@@ -104,7 +112,7 @@ class ShoppingListViewModel @Inject constructor(
 
         viewModelScope.launch {
 
-            getCheckedItems()?.let { moveFromListToPantry(it, listId) }
+            filterItems(true)?.let { moveFromListToPantry(it, listId) }
         }
     }
 
@@ -112,7 +120,7 @@ class ShoppingListViewModel @Inject constructor(
 
         viewModelScope.launch {
 
-            getCheckedItems()?.let { removeShoppingItems(it) }
+            filterItems(true)?.let { removeShoppingItems(it) }
         }
     }
 
@@ -121,9 +129,9 @@ class ShoppingListViewModel @Inject constructor(
         navigate(ListContainerFragmentDirections.actionListContainerFragmentToAddShoppingItemFragment(listId))
     }
 
-    private fun getCheckedItems() = rows.value?.filterIsInstance<ShoppingListRow.Item>()?.filter {
+    private fun filterItems(checked: Boolean) = rows.value?.filterIsInstance<ShoppingListRow.Item>()?.filter {
 
-        it.item.checked
+        it.item.checked == checked
     }?.map {
 
         it.item
@@ -136,6 +144,15 @@ class ShoppingListViewModel @Inject constructor(
 
             deleteShoppingList(listId)
             navigate(R.id.action_listContainerFragment_self)
+        }
+    }
+
+    fun onShareClicked() {
+
+        filterItems(false)?.let {
+
+            val shareString = ListItemFormatter.getShoppingItemShareText(resources, listMeta, it)
+            navigate(NavigationCommand.StartActivity(ShareUtil.buildShareIntent(shareString)))
         }
     }
 }

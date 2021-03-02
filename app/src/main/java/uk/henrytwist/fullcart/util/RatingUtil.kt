@@ -17,7 +17,7 @@ object RatingUtil {
             if (it.isSuccessful) {
 
                 val info = it.result
-                manager.launchReviewFlow(activity, info).addOnFailureListener {
+                manager.launchReviewFlow(activity, info).addOnCompleteListener {
 
                     openPlayStoreListing(activity)
                 }
@@ -28,7 +28,7 @@ object RatingUtil {
         }
     }
 
-    private fun openPlayStoreListing(context: Context) {
+    fun openPlayStoreListing(context: Context) {
 
         val intent = Intent(Intent.ACTION_VIEW).apply {
             data = Uri.parse("https://play.google.com/store/apps/details?id=${context.packageName}")

@@ -26,16 +26,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
+        <uk.henrytwist.fullcart.view.components.WrappingEditText
             android:id="@+id/edit_item_name_container"
             style="@style/LargeNameInputEditText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/layout_margin_horizontal"
-            android:importantForAutofill="no"
             android:layout_marginTop="@dimen/content_margin_top"
             android:hint="@string/item_name_hint"
-            android:inputType="textCapSentences|textMultiLine"
+            android:importantForAutofill="no"
+            android:inputType="textCapSentences"
             android:text="@{viewModel.name}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

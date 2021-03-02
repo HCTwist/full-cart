@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import uk.henrytwist.androidbasics.livedata.immutable
 import uk.henrytwist.fullcart.R
 import uk.henrytwist.fullcart.models.ListType
 import uk.henrytwist.fullcart.models.ShoppingItemDetails
@@ -30,6 +31,9 @@ class EditShoppingItemViewModel @Inject constructor(
 
     private var id = -1
     private lateinit var itemDetails: ShoppingItemDetails
+
+    private val _checked = MutableLiveData<Boolean>()
+    val checked = _checked.immutable()
 
     val pantrySelectionDialogHelper = ListSelectionDialogHelper(this::onPantryToMoveToSelected, R.string.move_to_dialog_title)
     val shoppingListSelectionDialogHelper = ListSelectionDialogHelper(this::onShoppingListToMoveToSelected, R.string.move_to_dialog_title)
@@ -57,6 +61,7 @@ class EditShoppingItemViewModel @Inject constructor(
             name.value = itemDetails.name
             category.value = itemDetails.category
             setQuantity(itemDetails.quantity)
+            _checked.value = itemDetails.checked
 
             _changeMonitor.monitor(name, category, quantityNumberIndex, quantityUnitIndex)
 

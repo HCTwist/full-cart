@@ -1,6 +1,7 @@
 package uk.henrytwist.fullcart.view
 
 import android.content.Context
+import android.content.res.Resources
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
@@ -36,7 +37,7 @@ object ListItemFormatter {
         }
     }
 
-    fun getUseByDateSummary(context: Context, useByDate: UseByDate?): String? {
+    fun getUseByDateSummary(resources: Resources, useByDate: UseByDate?): String? {
 
         if (useByDate == null) return null
 
@@ -44,29 +45,28 @@ object ListItemFormatter {
 
         return when {
 
-            d < -7 -> context.getString(R.string.over_a_week_ago)
-            d in -7..-2 -> context.getString(R.string.days_ago, -d)
-            d == -1 -> context.getString(R.string.yesterday)
-            d == 0 -> context.getString(R.string.today)
-            d == 1 -> context.getString(R.string.tomorrow)
+            d < -7 -> resources.getString(R.string.over_a_week_ago)
+            d in -7..-2 -> resources.getString(R.string.days_ago, -d)
+            d == -1 -> resources.getString(R.string.yesterday)
+            d == 0 -> resources.getString(R.string.today)
+            d == 1 -> resources.getString(R.string.tomorrow)
             d in 2..7 -> useByDate.date.dayOfWeek.getDisplayName(TextStyle.FULL, Locale.getDefault())
             else -> useByDate.toFullString()
         }
     }
 
-    fun getQuantityString(context: Context, quantity: Quantity): String {
+    fun getQuantityString(resources: Resources, quantity: Quantity): String {
 
-        val r = context.resources
         val n = quantity.number
         return when (quantity.unit) {
 
-            Quantity.Unit.SINGLE -> r.getString(R.string.quantity_single, n)
-            Quantity.Unit.LITRES -> r.getString(R.string.quantity_litres, n)
-            Quantity.Unit.PINTS -> r.getQuantityString(R.plurals.quantity_pints, n, n)
-            Quantity.Unit.PACKS -> r.getQuantityString(R.plurals.quantity_packs, n, n)
-            Quantity.Unit.KILOGRAMS -> r.getString(R.string.quantity_kilograms, n)
-            Quantity.Unit.GRAMS -> r.getString(R.string.quantity_grams, n)
-            Quantity.Unit.ML -> r.getString(R.string.quantity_ml, n)
+            Quantity.Unit.SINGLE -> resources.getString(R.string.quantity_single, n)
+            Quantity.Unit.LITRES -> resources.getString(R.string.quantity_litres, n)
+            Quantity.Unit.PINTS -> resources.getQuantityString(R.plurals.quantity_pints, n, n)
+            Quantity.Unit.PACKS -> resources.getQuantityString(R.plurals.quantity_packs, n, n)
+            Quantity.Unit.KILOGRAMS -> resources.getString(R.string.quantity_kilograms, n)
+            Quantity.Unit.GRAMS -> resources.getString(R.string.quantity_grams, n)
+            Quantity.Unit.ML -> resources.getString(R.string.quantity_ml, n)
         }
     }
 
@@ -99,7 +99,7 @@ object ListItemFormatter {
             return SpannableString(name)
         }
 
-        val quantitySuffix = context.getString(R.string.item_title_quantity_suffix, getQuantityString(context, quantity))
+        val quantitySuffix = context.getString(R.string.item_title_quantity_suffix, getQuantityString(context.resources, quantity))
         val string = SpannableString("$name$quantitySuffix")
         val color = context.getColorAttr(android.R.attr.textColorSecondary)
         val span = ForegroundColorSpan(color)
@@ -135,5 +135,57 @@ object ListItemFormatter {
 
             context.getString(R.string.move_checked_to_pantry_single, divider.singlePantryName)
         }
+    }
+
+    fun getShoppingItemShareText(resources: Resources, meta: ListMeta, items: List<ShoppingItemSummary>): String {
+
+        val builder = StringBuilder()
+
+        builder.append(meta.name)
+        builder.append("\n")
+
+        items.forEach {
+
+            builder.append("\n")
+
+            builder.append(resources.getString(
+                    R.string.share_shopping_item,
+                    it.name,
+                    getQuantityString(resources, it.quantity)
+            ))
+        }
+
+        return builder.toString()
+    }
+
+    fun getPantryItemShareText(resources: Resources, meta: ListMeta, items: List<PantryItemSummary>): String {
+
+        val builder = StringBuilder()
+
+        builder.append(meta.name)
+        builder.append("\n")
+
+        items.forEach {
+
+            builder.append("\n")
+            builder.append(if (it.hasUseByDate()) {
+
+                resources.getString(
+                        R.string.share_pantry_item_use_by,
+                        it.name,
+                        getQuantityString(resources, it.quantity),
+                        getUseByDateSummary(resources, it.useByDate)
+                )
+            } else {
+
+                resources.getString(
+                        R.string.share_pantry_item,
+                        it.name,
+                        getQuantityString(resources, it.quantity)
+                )
+            })
+        }
+
+        return builder.toString()
     }
 }

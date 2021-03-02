@@ -57,4 +57,9 @@ class ShoppingItemRepository @Inject constructor(private val localSource: Shoppi
 
         localSource.moveToList(item, newListId)
     }
+
+    suspend fun removeCategory(categoryId: Int) {
+
+        localSource.removeCategory(categoryId)
+    }
 }

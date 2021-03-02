@@ -7,12 +7,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-import uk.henrytwist.androidbasics.Event
 import uk.henrytwist.androidbasics.livedata.event
 import uk.henrytwist.fullcart.models.ListType
 import uk.henrytwist.fullcart.usecases.FindStartingList
 import uk.henrytwist.fullcart.usecases.GetListMeta
 import uk.henrytwist.fullcart.view.IdBundle
+import uk.henrytwist.kotlinbasics.Event
 import javax.inject.Inject
 
 @HiltViewModel

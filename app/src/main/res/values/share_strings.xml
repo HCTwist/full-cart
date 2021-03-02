@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 1 - name, 2 - quantity -->
+    <string name="share_shopping_item">&#8226; %1$s - %2$s</string>
+
+    <!-- 1 - name, 2 - quantity, 3 - use by date -->
+    <string name="share_pantry_item">&#8226; %1$s - %2$s</string>
+    <string name="share_pantry_item_use_by">&#8226; %1$s - %2$s [Use by %3$s]</string>
+</resources>
