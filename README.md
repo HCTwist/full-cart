@@ -1,15 +1,19 @@
 # FullCart #
 
-This is the repository for FullCart - [Google Play](https://play.google.com/store/apps/details?id=com.twisthenry8gmail.fullcart)
+This is the repository for FullCart - [Google Play](https://play.google.com/store/apps/details?id=uk.henrytwist.fullcart)
 
-Shopping lists don’t have to be complicated, that’s why we haven’t made them so.
-Easily add the items you need to your list, giving as much or little information as you want. Assign them to categories of your own choosing – a truly individual experience. FullCart lays your shopping list out in a simple design with everything you need right in front of you.
+Food shopping doesn't have to be complicated. With FullCart you can create, manage and customise shopping lists and pantries to make your life easier.
 
-Ever wondered if you need to buy an item or if you already have some? What about if something is about to go out-of-date? Keep track of this with the pantry system – informing you what you have and the use by dates of your items.
+With a beautiful, easy to use interface and absolutely <b>no ads</b>, FullCart is the shopping list solution for you.
 
-Sometimes the old-fashioned method is the best one, which is why your lists are only stored directly on your phone – completely off the grid.
-And what’s worse than a beautiful clean UI that gets cluttered with ads. We keep the fluid experience and design by staying completely ad free!
+<h3><b>Shopping lists</b></h3>
+Create simple shopping lists using categories and quantities. Quickly search for items you have added in the past to speed up the process of making a full shopping list.
 
-We are constantly working on improvements for the app. If you have any feature requests, bugs to report or design/usability ideas feel free to send us an email! We endeavour to respond to every request we get – there’s even a feature to send us feedback directly from the app!
+<h3><b>Pantries</b></h3>
+Manage food you've bought with pantries. Either move over items from your shopping lists or create them from scratch, specifying as much or as little information as you want.
+
+Set use by dates on items and help end the trend towards food waste by getting notifications before things need to be used.
 
 We hope you enjoy your experience using FullCart!
+
+<i>We are constantly working on improvements for the app. If you have any feature requests, bugs to report or design/usability ideas feel free to send us an email, either from here or in the app's settings.</i>
